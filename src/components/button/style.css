@@ -1,0 +1,13 @@
+.primary-btn{
+    border-radius: 88px;
+    background: #149F8E;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    /* Hover color */
+    &:hover{
+        background: #1bbfab;
+        color: #fff;
+    }
+}
