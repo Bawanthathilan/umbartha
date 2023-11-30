@@ -1,3 +1,4 @@
+
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -7,6 +8,8 @@ import NavBar from "@/components/navbar";
 import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "Umbartha",
@@ -20,6 +23,7 @@ export default function RootLayout({
   auth: React.ReactNode;
 }) {
   return (
+
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <NavBar />
@@ -28,5 +32,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+
   );
 }

@@ -17,7 +17,7 @@ const HomePage = () => {
               <button className="bg-white mt-8 py-[14px] px-[51px] border-none text-[#082623] text-base">Learn More</button>
             </div>
           </div>
-          <div className="slider-container flex flex-col items-center justify-center gap-[37px] px-6 lg:px-0">
+          <div className="slider-container h-[400px] lg:h-[582px] flex flex-col items-center justify-center gap-[37px] px-6 lg:px-0">
             <h2 className=" text-3xl lg:text-5xl text-[#082623] font-bold leading-normal">Access medical specialists <br /> anywhere, anytime</h2>
             <p className=" text-base lg:text-2xl text-[#082623] font-normal ">Umbartha connects patients to high quality and affordable psychiatrists and other mental health <br /> professionals via secure telehealth video consultations anywhere across Australia.</p>
           </div>
