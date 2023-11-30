@@ -4,6 +4,7 @@ import "./style.css";
 import WhatWeOffer from "@/components/home-section/What-we-offer";
 import Events from "@/components/home-section/Events";
 import VideoSection from "@/components/home-section/VideoSection";
+import Testimonial from "@/components/home-section/Testimonial";
 
 const HomePage = () => {
   return (
@@ -27,6 +28,7 @@ const HomePage = () => {
       <WhatWeOffer />
       <Events />
       <VideoSection />
+      <Testimonial />
 
     </React.Fragment>
   );
