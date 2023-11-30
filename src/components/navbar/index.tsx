@@ -13,8 +13,8 @@ const NavBar = () => {
     console.log("Button clicked!");
   };
   return (
-    <nav className=" bg-transparent absolute top-0 w-full">
-      <div className="max-w-6xl mx-auto px-1 bg-transparent">
+    <nav className=" bg-transparent z-50 absolute top-0 w-full ">
+      <div className="max-w-6xl mx-auto bg-transparent px-5 lg:px-1">
         <div className="flex justify-between">
           <div className="flex space-x-4">
             {/* logo */}
