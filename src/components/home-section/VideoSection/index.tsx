@@ -21,7 +21,7 @@ const VideoSection = () => {
         <div className="bottom bg-[#004139] h-[600px] w-full inset-0">
           <div className="grid grid-cols-2 h-full max-w-7xl mx-auto">
 
-            <div className="content flex flex-col h-auto justify-end pb-10  w-full max-w-5xl text-white gap-5">
+            <div className="content flex flex-col h-auto justify-end pb-[145px]  w-full max-w-5xl text-white gap-5">
               <h1 className=' text-5xl font-bold'>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h1>
               <p className=' text-xl font-medium'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore e.</p>
             </div>
