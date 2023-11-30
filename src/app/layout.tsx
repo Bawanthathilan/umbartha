@@ -1,11 +1,15 @@
+
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import ReduxProvider from "../redux/provider";
-import NavBar from "../components/navbar";
+import NavBar from "@/components/navbar";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export const metadata: Metadata = {
   title: "Umbartha",
@@ -19,11 +23,15 @@ export default function RootLayout({
   auth: React.ReactNode;
 }) {
   return (
+
     <html lang="en" suppressHydrationWarning>
-      <body>
+      <body className={inter.className}>
         <NavBar />
         <ReduxProvider>{children}</ReduxProvider>
+
+        <Footer />
       </body>
     </html>
+
   );
 }
