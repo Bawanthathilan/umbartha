@@ -4,9 +4,9 @@ import Thubnail from '@/assets/home/videoSection/video.png'
 
 const VideoSection = () => {
   return (
-    <div>
-      <div className='top bg-white py-[37px] relative'>
-        <div className="container mx-auto z-50 relative">
+    <>
+      <div className='top bg-white pt-[37px] h-full relative'>
+        <div className="container mx-auto z-10 ">
           <div className="title flex flex-col items-center text-center gap-3">
             <h4 className=' text-black text-[32px] font-medium'>Umbartha Makes You</h4>
             <h1 className='text-black font-bold text-[48px]'>Better and Better Every Day,<br />
@@ -18,7 +18,7 @@ const VideoSection = () => {
           </div>
         </div>
 
-        <div className="bottom bg-[#004139] h-full absolute w-full top-[70%] -z-1">
+        <div className="bottom bg-[#004139] h-[600px] w-full inset-0">
           <div className="grid grid-cols-2 h-full max-w-7xl mx-auto">
 
             <div className="content flex flex-col h-auto justify-end pb-10  w-full max-w-5xl text-white gap-5">
@@ -29,8 +29,7 @@ const VideoSection = () => {
           </div>
         </div>
       </div>
-
-    </div>
+    </>
   )
 }
 
