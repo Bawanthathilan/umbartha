@@ -23,7 +23,7 @@ const EventCard = ({
     link
 }: EventcardProps) => {
     return (
-        <div className='flex flex-col justify-between w-full max-w-[292px] rounded-xl hover:shadow'>
+        <div className='flex flex-col justify-between w-full max-w-[292px] rounded-xl shadow hover:shadow-lg'>
             <div className="header relative w-full h-[300px]">
                 <Image src={img} alt={title} fill className='object-cover rounded-t-lg' />
 
