@@ -11,7 +11,7 @@ const Events = () => {
         <div className=' bg-white py-[69px]'>
             <div className='container max-w-7xl mx-auto'>
                 <div className="title">
-                    <h4 className='text-[42px] font-bold text-[#014840]'>Events</h4>
+                    <h4 className=' text-center lg:text-left text-[32px] lg:text-[42px] font-bold text-[#014840]'>Events</h4>
                 </div>
 
                 <div className="card-grid mt-[33px] flex flex-row justify-between">

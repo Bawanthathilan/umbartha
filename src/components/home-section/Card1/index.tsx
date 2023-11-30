@@ -14,7 +14,7 @@ const Card1 = ({
     description
 }: Card1Pros) => {
     return (
-        <div className=' bg-white rounded-lg py-9 px-8 w-full max-w-[291px]'>
+        <div className=' bg-white rounded-lg py-9 px-8 w-full max-w-full lg:max-w-[291px]'>
 
             <div className='flex flex-col justify-between gap-10'>
                 <div className="img w-[95px] h-[95px] relative">

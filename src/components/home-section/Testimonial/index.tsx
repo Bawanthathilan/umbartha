@@ -11,12 +11,12 @@ import Image1 from '@/assets/home/testimonial/1.png'
 const Testimonial = () => {
     return (
         <div>
-            <div className='container max-w-7xl mx-auto pt-[149px]'>
+            <div className='container max-w-7xl mx-auto pt-[60px] lg:pt-[149px]'>
                 <div className="title">
-                    <h4 className='text-[48px] font-bold text-black'>Testimonials </h4>
+                    <h4 className=' text-[32px] lg:text-[48px] text-center lg:text-left font-bold text-black'>Testimonials </h4>
                 </div>
 
-                <div className="flex flex-row justify-between gap-5 mt-[45px]">
+                <div className="flex flex-col lg:flex-row justify-between gap-5 mt-[45px] px-10 lg:px-0">
                     <TestimonialCard
                         img={Image1}
                         title='I was able to resolve the pain and the anger that I had towards the person who had hurt me.”'
@@ -40,8 +40,8 @@ const Testimonial = () => {
             </div>
 
             <div className='bg-testimonial-image bg-cover h-full'>
-                <div className="slider-container-testimonial  flex flex-col items-center justify-center gap-[37px] ">
-                    <h1 className={`${KaiseiDecol.className} text-[64px] font-bold text-center`}>Lorem ipsum dolor sit amet, <br />consectetur adipiscing elit, sed <br /> do eiusmod tempor incididunt ut <br />labore et dolore magna aliqua.</h1>
+                <div className="slider-container-testimonial h-[500px] lg:h-[924px]  flex flex-col items-center justify-center gap-[37px] px-5 lg:px-0">
+                    <h1 className={`${KaiseiDecol.className} text-[28px] max-w-6xl lg:text-[64px] font-bold text-center`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
                 </div>
             </div>
         </div>

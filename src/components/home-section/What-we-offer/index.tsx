@@ -8,9 +8,9 @@ import Icon4 from '@/assets/home/what-we-offer/Icon4.png'
 
 const WhatWeOffer = () => {
     return (
-        <div className=' bg-white-bg-gradient py-[79px]'>
+        <div className=' bg-white-bg-gradient py-5 lg:py-[79px]'>
             <div className='container max-w-7xl mx-auto'>
-                <div className="title">
+                <div className="title hidden lg:block">
                     <h4 className='text-[42px] font-bold'>What We Offer</h4>
                 </div>
 
