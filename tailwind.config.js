@@ -15,7 +15,7 @@ module.exports = {
         "white-bg-gradient":
           "linear-gradient(180deg, #F7F2EE 8.11%, rgba(255, 255, 255, 0.00) 100%);",
 
-        "testimonial-image": "url('/images/background/testimonialbg.png')",
+        "testimonial-image": "url('/images/background/testimonialbg.jpg')",
       },
     },
   },
