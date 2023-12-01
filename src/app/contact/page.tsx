@@ -21,8 +21,8 @@ const page = () => {
 
             <div className='bg-[#F9F6F3] pb-14'>
                 <div className="container mx-auto max-w-6xl px-5 lg:px-0">
-                    <div className="grid grid-cols-2 gap-10">
-                        <div className="left flex flex-col gap-5">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+                        <div className="left flex flex-col gap-5 order-2 lg:order-1">
                             <div className="title">
                                 <h1 className=' text-4xl font-bold'>Drop a Line</h1>
                             </div>
@@ -44,7 +44,7 @@ const page = () => {
                             </form>
                         </div>
 
-                        <div className="right flex flex-col gap-5 justify-between">
+                        <div className="right flex flex-col gap-10 lg:gap-5 mt-20 lg:mt-0 justify-between order-1 lg:order-2">
                             <div className="title flex flex-col gap-5">
                                 <h1 className='text-4xl font-bold'>Do You Have a Question?</h1>
                                 <div className="social flex flex-row gap-5">
@@ -79,7 +79,7 @@ const page = () => {
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
                                     aria-controls="panel1a-content"
-                                    id="panel1a-header"
+                                    id="panel1a-header" s
                                 >
                                     <Typography>How much do you charge for the file processing?</Typography>
                                 </AccordionSummary>
