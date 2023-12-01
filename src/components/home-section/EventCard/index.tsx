@@ -24,7 +24,7 @@ const EventCard = ({
 }: EventcardProps) => {
     return (
         <div className='flex flex-col justify-between w-full max-w-full lg:max-w-[292px] rounded-xl shadow hover:shadow-lg px-10 lg:px-0'>
-            <div className="header relative w-full h-[300px]">
+            <div className="header relative w-full h-[250px]">
                 <Image src={img} alt={title} fill className='object-cover rounded-t-lg' />
 
                 <div className="tag rounded-tr-xl absolute bottom-0 left-0 bg-[#26AF9F] px-2 py-2 text-white">
