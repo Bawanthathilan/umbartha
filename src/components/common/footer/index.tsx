@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className="flex flex-col lg:flex-row justify-between">
                     <div className="logo flex flex-col gap-5">
                         <Image
-                            src="logo/umbartha_logo.svg"
+                            src="/logo/umbartha_logo.svg"
                             width={183.195}
                             height={39.376}
                             alt={""}

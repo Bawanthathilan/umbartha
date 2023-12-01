@@ -24,7 +24,7 @@ const NavBar = () => {
               <Link href="/">
                 <h4 className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
                   <Image
-                    src={!isOpen ? "logo/umbartha_logo.svg" : "logo/green.svg"}
+                    src={!isOpen ? "/logo/umbartha_logo.svg" : "/logo/green.svg"}
                     width={183.195}
                     height={39.376}
                     alt={""}

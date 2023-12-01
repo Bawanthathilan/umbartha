@@ -107,7 +107,7 @@ const OurServicesSection = () => {
                     <Image src={Img1} alt='img1' className='w-full object-cover' />
                     <Image src={Img2} alt='img1' className='w-full object-cover' />
                     <Image src={Img3} alt='img1' className='w-full object-cover hidden lg:block' />
-                    <Image src={Img4} alt='img1' className='w-full object-cover hidden lg:block ' />
+                    <Image src={Img4} alt='img1' className='w-full object-cover hidden lg:block' />
                 </div>
             </div>
         </div >
