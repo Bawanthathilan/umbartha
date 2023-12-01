@@ -1,0 +1,21 @@
+<svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 32">
+<g id="Rectangle 17" filter="url(#filter0_d_204_54)">
+<rect x="10" y="10" width="62" height="62" rx="31" fill="white"/>
+</g>
+<rect id="Rectangle 18" x="31.1213" y="48.3848" width="26" height="3" rx="1.5" transform="rotate(-45 31.1213 48.3848)" fill="#26AF9F"/>
+<rect id="Rectangle 20" x="33.1213" y="30.3848" width="26" height="3" rx="1.5" transform="rotate(45 33.1213 30.3848)" fill="#26AF9F"/>
+</g>
+<defs>
+<filter id="filter0_d_204_54" x="0" y="0" width="82" height="82" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset/>
+<feGaussianBlur stdDeviation="5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.14902 0 0 0 0 0.686275 0 0 0 0 0.623529 0 0 0 0.35 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_204_54"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_204_54" result="shape"/>
+</filter>
+</defs>
+</svg>

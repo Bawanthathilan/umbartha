@@ -1,15 +1,16 @@
 import React from "react";
-
-import NavBar from "../../components/navbar";
+import HeroSection from "@/components/common/HeroSection";
+import AboutSection from "@/components/about/about-section";
 
 const HomePage = () => {
   return (
     <div>
-      <div>
-        <h1 className={"text-4xl font-bold text-center text-gray-800"}>
-          About
-        </h1>
-      </div>
+      <HeroSection
+        subtitle="About us"
+        title="Live without anxiety 
+          or exhaustion"
+      />
+      <AboutSection />
     </div>
   );
 };
