@@ -60,16 +60,16 @@ const NavBar = () => {
         <div className="container mx-auto max-w-6xl w-full flex flex-row justify-between mt-[5%]">
           <div className="div flex flex-row gap-20">
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
-              <Link href='/'>
+              <Link href='/' onClick={() => setIsOpen(!isOpen)} >
                 home
               </Link>
-              <Link href='ourservices'>
+              <Link href='ourservices' onClick={() => setIsOpen(!isOpen)}>
                 Service
               </Link>
-              <Link href='aboutUs'>
+              <Link href='aboutUs' onClick={() => setIsOpen(!isOpen)}>
                 about
               </Link>
-              <Link href='events'>
+              <Link href='events' onClick={() => setIsOpen(!isOpen)}>
                 event
               </Link>
 
@@ -77,10 +77,10 @@ const NavBar = () => {
             </div>
 
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
-              <Link href=''>
+              <Link href='' onClick={() => setIsOpen(!isOpen)}>
                 gallery
               </Link>
-              <Link href='/contact'>
+              <Link href='/contact' onClick={() => setIsOpen(!isOpen)}>
                 contact
               </Link>
             </div>
