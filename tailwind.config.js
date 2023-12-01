@@ -18,6 +18,8 @@ module.exports = {
         "testimonial-image": "url('/images/background/testimonialbg.jpg')",
         "hero-gradient":
           "linear-gradient(0deg, #F9F6F3 0%, rgba(255, 255, 255, 0.00) 100%), linear-gradient(90deg, #0B665B 0%, #26AF9F 45.53%, #F7E36D 99.48%);",
+        "hero-gradient-2":
+          "linear-gradient(2deg, rgba(1, 72, 64, 0.00) 14.29%, #014840 95.89%), lightgray 50% / cover no-repeat;",
         "ourservice-gradient":
           "linear-gradient(90deg, #FFF 19.17%, #E8FFF7 97.08%);",
       },
