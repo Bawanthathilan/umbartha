@@ -46,11 +46,11 @@ export const data = {
                 },
                 {
                     name: 'About',
-                    link: '/'
+                    link: '/aboutUs'
                 },
                 {
                     name: 'Contact',
-                    link: '/'
+                    link: '/contact'
                 }
                 , {
                     name: 'E-Learning',
