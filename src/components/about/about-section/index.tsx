@@ -45,7 +45,7 @@ const AboutSection = () => {
                 </div>
 
                 <div className="section-3">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-5 lg:gap-0 text-center lg:text-left">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center gap-5 lg:gap-0 text-center lg:text-left">
                         <div className="manisha">
                             <Image src={manisha} alt='manisha' width={458} height={574} className='object-cover' />
                         </div>
