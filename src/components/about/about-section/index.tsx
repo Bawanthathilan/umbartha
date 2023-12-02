@@ -50,17 +50,23 @@ const AboutSection = () => {
                             <Image src={manisha} alt='manisha' width={458} height={574} className='object-cover' />
                         </div>
 
-                        <div className="right flex flex-col gap-5">
-                            <div className="title flex flex-col text-[#26AF9F] gap-5">
+                        <div className="right flex flex-col gap-10 lg:gap-5">
+
+                            <div className="title flex flex-col text-[#26AF9F] gap-5 order-2 lg:order1">
+                                <div className=' items-center justify-center flex md:hidden '>
+                                    <Image src={Sig} alt='signature' width={228} height={100} className='block md:hidden' />
+                                </div>
+
                                 <h4 className=' text-2xl lg:text-[40px] font-semibold'>Manisha Billimoria</h4>
                                 <p className='uppercase font-normal text-lg'>Counselor & Therapist at Umbartha Beyond Thresholds</p>
                             </div>
-                            <p className='text-[#4E4E4E] font-normal text-base lg:text-lg text-left'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore e.</p>
 
-                            <div className="btn-group flex flex-col lg:flex-row gap-10 items-center">
+                            <p className='text-[#4E4E4E] font-normal text-base lg:text-lg text-center lg:text-left order-1 lg:order-2'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt  labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore e.</p>
+
+                            <div className="btn-group flex flex-col lg:flex-row gap-0 lg:gap-10  items-center order-3 lg:order-3">
                                 <CustomButton text="Make an Appointment" />
 
-                                <Image src={Sig} alt='signature' width={228} height={141} />
+                                <Image src={Sig} alt='signature' width={228} height={141} className='hidden md:block' />
                             </div>
 
                         </div>
@@ -71,7 +77,7 @@ const AboutSection = () => {
 
 
             </div>
-            <div className="strip bg-[#F1EFEC] py-[45px]">
+            <div className="strip bg-[#F1EFEC] py-[45px] mt-10 lg:mt-0">
                 <div className="container mx-auto max-w-7xl grid grid-cols-2 gap-5 lg:gap-0 lg:flex lg:flex-row justify-between">
                     <div className="number flex flex-col gap-3 items-center">
                         <h1 className='text-[#595959] text-7xl font-semibold'>18</h1>

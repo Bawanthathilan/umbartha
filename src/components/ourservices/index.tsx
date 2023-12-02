@@ -22,41 +22,49 @@ const OurServicesSection = () => {
             <div className="container mx-auto max-w-7xl py-[60px] px-5 lg:px-0">
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
                     <Card1
+                        responsive={true}
                         img={Icon1}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon2}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon3}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon1}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon4}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon1}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon1}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
                     />
                     <Card1
+                        responsive={true}
                         img={Icon1}
                         title='Individual Session'
                         description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
@@ -104,10 +112,10 @@ const OurServicesSection = () => {
                 </div>
 
                 <div className=" grid grid-cols-4 w-full h-auto lg:h-[500px] justify-between">
-                    <Image src={Img1} alt='img1' className='w-full object-cover' />
-                    <Image src={Img2} alt='img1' className='w-full object-cover' />
-                    <Image src={Img3} alt='img1' className='w-full object-cover ' />
-                    <Image src={Img4} alt='img1' className='w-full object-cover ' />
+                    <Image src={Img1} alt='img1' className='w-full h-full object-cover' />
+                    <Image src={Img2} alt='img1' className='w-full h-full object-cover' />
+                    <Image src={Img3} alt='img1' className='w-full h-full object-cover ' />
+                    <Image src={Img4} alt='img1' className='w-full  h-full object-cover ' />
                 </div>
             </div>
         </div >
