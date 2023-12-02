@@ -26,7 +26,7 @@ const page = () => {
                 desc='Find balance & well-being today!'
             />
 
-            <div className="bg-[#F9F6F3]">
+            <div className="bg-bg-white-varient">
                 <div className="container mx-auto max-w-6xl pb-10 px-5 lg:px-0">
                     <div className="grid grid-cols-2 gap-10 mt-10 lg:mt-0">
                         <div className="left relative w-full h-[200px] lg:h-[610px]">

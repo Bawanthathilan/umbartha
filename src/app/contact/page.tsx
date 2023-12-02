@@ -1,3 +1,4 @@
+"use client"
 import React from 'react'
 import HeroSection from '@/components/common/HeroSection'
 import { data } from '@/data/index'
@@ -11,6 +12,32 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import { useParallax } from 'react-scroll-parallax';
+
+import ParalaxImg from '@/assets/home/paralax/2.png'
+import ParalaxImg2 from '@/assets/home/paralax/3.png'
+
+function Paralaxtwo() {
+    const { ref }: any = useParallax({ speed: 40 });
+
+    return (
+        <div ref={ref} className='paralax w-full'>
+            <Image src={ParalaxImg2} alt='paralax' width={150} height={300} className='object-contain' />
+        </div>
+    )
+}
+
+function ParalaxOne() {
+    const { ref }: any = useParallax({ speed: 40 });
+
+    return (
+        <div ref={ref} className='paralax w-full'>
+            <Image src={ParalaxImg2} alt='paralax' width={150} height={300} className='object-contain' />
+        </div>
+    )
+}
+
+
 const page = () => {
     return (
         <div>
@@ -19,8 +46,17 @@ const page = () => {
                 title='Lorem ipsum dolor sit amet, consectetur'
             />
 
-            <div className='bg-[#F9F6F3] pb-14'>
-                <div className="container mx-auto max-w-6xl px-5 lg:px-0">
+            <div className=' absolute right-0 top-[30%] lg:top-[40%] z-[1]'>
+                <ParalaxOne />
+            </div>
+
+            <div className=' absolute left-0 z-0 bottom-10'>
+                <Paralaxtwo />
+            </div>
+
+
+            <div className='bg-bg-white-varient pb-14 '>
+                <div className="container mx-auto max-w-6xl px-5 lg:px-0 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                         <div className="left flex flex-col gap-5 order-2 lg:order-1">
                             <div className="title">
@@ -78,8 +114,8 @@ const page = () => {
                             <Accordion>
                                 <AccordionSummary
                                     expandIcon={<ExpandMoreIcon />}
-                                    aria-controls="panel1a-content"
-                                    id="panel1a-header" s
+                                    aria-controls="panel2a-content"
+                                    id="panel2a-header"
                                 >
                                     <Typography>How much do you charge for the file processing?</Typography>
                                 </AccordionSummary>

@@ -58,6 +58,7 @@ const WhatWeOffer = () => {
                     >
                         <SwiperSlide>
                             <Card1
+                                responsive={false}
                                 img={Icon1}
                                 title='Individual Session'
                                 description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
@@ -67,6 +68,7 @@ const WhatWeOffer = () => {
 
                         <SwiperSlide>
                             <Card1
+                                responsive={false}
                                 img={Icon2}
                                 title='Couples Session'
                                 description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
@@ -76,6 +78,7 @@ const WhatWeOffer = () => {
 
                         <SwiperSlide>
                             <Card1
+                                responsive={false}
                                 img={Icon3}
                                 title='Single Session Therapy'
                                 description='Here we create a safe and secure space for clients to openly talk about struggles they face.'
@@ -84,6 +87,7 @@ const WhatWeOffer = () => {
 
                         <SwiperSlide>
                             <Card1
+                                responsive={false}
                                 img={Icon4}
                                 title='Family Session'
                                 description='Here we create a safe and secure space for clients to openly talk about struggles they face.'

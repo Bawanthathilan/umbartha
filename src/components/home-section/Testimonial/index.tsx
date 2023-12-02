@@ -80,7 +80,7 @@ const Testimonial = () => {
 
             </div>
 
-            <div className='bg-testimonial-image bg-cover bg-no-repeat bg-center h-full'>
+            <div className='bg-testimonial-image bg-cover bg-no-repeat bg-center h-[700px] md:h-full'>
                 <div className="slider-container-testimonial h-[500px] lg:h-[924px]  flex flex-col items-center justify-center gap-[37px] px-5 lg:px-0">
                     <h1 className={`${KaiseiDecol.className} text-[28px] max-w-6xl lg:text-[64px] font-bold text-center`}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed  do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
                 </div>

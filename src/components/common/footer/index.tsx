@@ -63,9 +63,28 @@ const Footer = () => {
                             to stay up to date.</h1>
 
                         <form className='flex flex-col gap-5  w-full justify-start'>
-                            <TextField id="standard-basic" label="Enter your Email" variant='standard' />
+                            <TextField id="standard-basic" label="Enter your Email" variant='standard'
+                                InputProps={{
+                                    style: {
+                                        borderColor: 'red',
 
-                            <button className='bg-white text-black p-2 w-[200px] md:w-[150px] lg:w-[200px] text-sm'>
+
+                                    },
+                                }}
+                                sx={{
+                                    "& .MuiInput-underline::before": {
+                                        borderBottomColor: "white", // Set a fixed color for the underline
+                                    },
+                                }}
+                                InputLabelProps={{
+                                    style: {
+                                        color: '#B5C1C8', // Change placeholder color
+                                        fontSize: '14px'
+                                    },
+                                }}
+                            />
+
+                            <button className='bg-white py-[14px] px-[35px] w-[200px] md:w-[150px] lg:w-[200px] text-[#082623] text-sm'>
                                 SUBSCRIBE
                             </button>
                         </form>

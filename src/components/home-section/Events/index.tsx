@@ -45,7 +45,7 @@ const Events = () => {
                         },
                     }}
                     modules={[Pagination]}
-                    className="mySwiper mt-[35px]"
+                    className="eventSwiper mt-[35px]"
                 >
                     <SwiperSlide>
                         <EventCard

@@ -23,7 +23,7 @@ const EventCard = ({
     link
 }: EventcardProps) => {
     return (
-        <div className='flex flex-col justify-between w-full max-w-full lg:max-w-[292px] rounded-xl shadow hover:shadow-lg px-10 lg:px-0'>
+        <div className='flex flex-col justify-between w-full max-w-full lg:max-w-[292px] rounded-xl shadow hover:shadow-lg '>
             <div className="header relative w-full h-[250px]">
                 <Image src={img} alt={title} fill className='object-cover rounded-t-lg' />
 
@@ -32,7 +32,7 @@ const EventCard = ({
                 </div>
             </div>
 
-            <div className=" flex flex-col gap-5 px-4 pt-4">
+            <div className=" flex flex-col gap-5 px-4 pt-4 md:px-10 lg:px-4">
                 <h3 className=' text-lg font-semibold text-black'>{title}</h3>
 
                 <div className="date flex flex-col gap-3 text-[#4B4B4B] text-[11px] ">

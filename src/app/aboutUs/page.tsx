@@ -1,6 +1,10 @@
+"use client"
 import React from "react";
 import HeroSection from "@/components/common/HeroSection";
 import AboutSection from "@/components/about/about-section";
+
+
+
 
 const HomePage = () => {
   return (
