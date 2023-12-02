@@ -24,7 +24,7 @@ const NavBar = () => {
               <Link href="/">
                 <h4 className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
                   <Image
-                    src={!isOpen ? "logo/umbartha_logo.svg" : "logo/green.svg"}
+                    src={!isOpen ? "/logo/umbartha_logo.svg" : "/logo/green.svg"}
                     width={183.195}
                     height={39.376}
                     alt={""}
@@ -57,19 +57,19 @@ const NavBar = () => {
       </div>
 
       <div className={isOpen ? " hidden lg:flex absolute top-0  -z-10 bg-white h-[500px] right-0 w-full" : "hidden"}>
-        <div className="container mx-auto max-w-6xl w-full flex flex-row justify-between mt-[5%]">
+        <div className="container mx-auto max-w-6xl w-full flex flex-row justify-between mt-[8%]">
           <div className="div flex flex-row gap-20">
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
-              <Link href='/'>
+              <Link href='/' onClick={() => setIsOpen(!isOpen)} >
                 home
               </Link>
-              <Link href='ourservices'>
+              <Link href='ourservices' onClick={() => setIsOpen(!isOpen)}>
                 Service
               </Link>
-              <Link href='aboutUs'>
+              <Link href='aboutUs' onClick={() => setIsOpen(!isOpen)}>
                 about
               </Link>
-              <Link href='events'>
+              <Link href='events' onClick={() => setIsOpen(!isOpen)}>
                 event
               </Link>
 
@@ -77,12 +77,19 @@ const NavBar = () => {
             </div>
 
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
-              <Link href=''>
+              <Link href='/inquery' onClick={() => setIsOpen(!isOpen)}>
+                Inquery
+              </Link>
+              <Link href='/healing' onClick={() => setIsOpen(!isOpen)}>
+                Healing
+              </Link>
+              <Link href='' onClick={() => setIsOpen(!isOpen)}>
                 gallery
               </Link>
-              <Link href='/contact'>
+              <Link href='/contact' onClick={() => setIsOpen(!isOpen)}>
                 contact
               </Link>
+
             </div>
           </div>
 

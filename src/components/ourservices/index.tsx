@@ -103,11 +103,11 @@ const OurServicesSection = () => {
                     </div>
                 </div>
 
-                <div className="flex-row w-full justify-between flex">
+                <div className=" grid grid-cols-4 w-full h-auto lg:h-[500px] justify-between">
                     <Image src={Img1} alt='img1' className='w-full object-cover' />
                     <Image src={Img2} alt='img1' className='w-full object-cover' />
-                    <Image src={Img3} alt='img1' className='w-full object- hidden lg:block' />
-                    <Image src={Img4} alt='img1' className='w-full object-cover hidden lg:block ' />
+                    <Image src={Img3} alt='img1' className='w-full object-cover ' />
+                    <Image src={Img4} alt='img1' className='w-full object-cover ' />
                 </div>
             </div>
         </div >

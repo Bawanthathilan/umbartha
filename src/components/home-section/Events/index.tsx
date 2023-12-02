@@ -36,8 +36,8 @@ const Events = () => {
                             spaceBetween: 20,
                         },
                         768: {
-                            slidesPerView: 4,
-                            spaceBetween: 40,
+                            slidesPerView: 2,
+                            spaceBetween: 10,
                         },
                         1024: {
                             slidesPerView: 4,
