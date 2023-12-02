@@ -57,7 +57,7 @@ const NavBar = () => {
       </div>
 
       <div className={isOpen ? " hidden lg:flex absolute top-0  -z-10 bg-white h-[500px] right-0 w-full" : "hidden"}>
-        <div className="container mx-auto max-w-6xl w-full flex flex-row justify-between mt-[5%]">
+        <div className="container mx-auto max-w-6xl w-full flex flex-row justify-between mt-[8%]">
           <div className="div flex flex-row gap-20">
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
               <Link href='/' onClick={() => setIsOpen(!isOpen)} >
