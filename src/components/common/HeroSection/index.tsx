@@ -1,7 +1,7 @@
 import React from 'react'
 
 interface HeroSectionProps {
-    subtitle: string,
+    subtitle?: string,
     title: string,
     desc?: string,
     left?: boolean
