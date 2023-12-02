@@ -77,12 +77,19 @@ const NavBar = () => {
             </div>
 
             <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
+              <Link href='/inquery' onClick={() => setIsOpen(!isOpen)}>
+                Inquery
+              </Link>
+              <Link href='/healing' onClick={() => setIsOpen(!isOpen)}>
+                Healing
+              </Link>
               <Link href='' onClick={() => setIsOpen(!isOpen)}>
                 gallery
               </Link>
               <Link href='/contact' onClick={() => setIsOpen(!isOpen)}>
                 contact
               </Link>
+
             </div>
           </div>
 
