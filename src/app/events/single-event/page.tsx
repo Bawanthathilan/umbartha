@@ -65,7 +65,7 @@ const page = () => {
             <div className=' absolute left-0 z-0 bottom-10'>
                 <Paralaxtwo />
             </div>
-            <div className='bg-[#F9F6F3] py-10'>
+            <div className='bg-bg-white-varient py-10'>
                 <div className="container mx-auto max-w-7xl px-5 lg:px-0">
                     <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-10 ">
                         <div className='w-auto order-2 lg:order-1'>

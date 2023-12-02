@@ -23,6 +23,10 @@ module.exports = {
         "ourservice-gradient":
           "linear-gradient(90deg, #FFF 19.17%, #E8FFF7 97.08%);",
       },
+
+      colors: {
+        "bg-white-varient": "#F9F6F3",
+      },
     },
   },
   plugins: [],

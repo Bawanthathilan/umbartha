@@ -50,7 +50,7 @@ const Page = () => {
                 <Paralaxtwo />
             </div>
 
-            <div className=' bg-[#F9F6F3] pb-14 '>
+            <div className=' bg-bg-white-varient pb-14 '>
                 <div className="container mx-auto max-w-6xl px-5 lg:px-0 z-10 relative">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 ">
 

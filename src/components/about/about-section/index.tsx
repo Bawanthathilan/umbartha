@@ -28,7 +28,7 @@ const AboutSection = () => {
             <div ref={ref} className='paralax absolute left-10 z-0 top-[30%]'>
                 <Image src={ParalaxImg2} alt='paralax' width={80} height={80} className='object-contain' />
             </div>
-            <div className='bg-[#F9F6F3] pt-[20px] lg:pt-[68px] z-10'>
+            <div className='bg-bg-white-varient pt-[20px] lg:pt-[68px] z-10'>
 
                 <div className="container mx-auto max-w-7xl px-5 lg:px-0">
                     <div className="section-1 flex flex-col gap-10">

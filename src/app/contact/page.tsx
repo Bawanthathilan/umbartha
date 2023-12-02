@@ -55,7 +55,7 @@ const page = () => {
             </div>
 
 
-            <div className='bg-[#F9F6F3] pb-14 '>
+            <div className='bg-bg-white-varient pb-14 '>
                 <div className="container mx-auto max-w-6xl px-5 lg:px-0 relative z-10">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
                         <div className="left flex flex-col gap-5 order-2 lg:order-1">

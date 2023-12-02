@@ -34,7 +34,7 @@ function Paralaxtwo() {
 
 const OurServicesSection = () => {
     return (
-        <div className='bg-[#F9F6F3] pt-[20px] lg:pt-[10px] pb-[0px] lg:pb-[0px] '>
+        <div className='bg-bg-white-varient pt-[20px] lg:pt-[10px] pb-[0px] lg:pb-[0px] '>
             <div className=' absolute left-0 z-0 top-[50%]'>
                 <Paralaxtwo />
             </div>

@@ -30,7 +30,7 @@ function ParalaxOne() {
 
 const EventSection = () => {
     return (
-        <div className='bg-[#F9F6F3] py-[20px] lg:py-[68px]'>
+        <div className='bg-bg-white-varient py-[20px] lg:py-[68px]'>
             <div className=' absolute right-0 top-[30%] lg:top-[40%] z-[1]'>
                 <ParalaxOne />
             </div>
