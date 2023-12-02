@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -11,12 +11,31 @@ import CustomButton from "../button";
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolling, setScrolling] = useState(false);
+
   const handleClick = () => {
     console.log("Button clicked!");
   };
+
+
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollThreshold = 100;
+      setScrolling(window.scrollY > scrollThreshold);
+    };
+
+    // Attach the event listener when the component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener when the component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <nav className=" bg-transparent z-50 absolute top-0 w-full ">
-      <div className="max-w-6xl mx-auto bg-transparent px-5 lg:px-1">
+    <nav className={`z-50 fixed top-0 ${scrolling ? 'bg-white' : ''} w-full`}>
+      <div className="max-w-6xl mx-auto bg-transparent px-5 lg:px-1 ">
         <div className="flex justify-between">
           <div className="flex space-x-4">
             {/* logo */}
@@ -24,7 +43,7 @@ const NavBar = () => {
               <Link href="/">
                 <h4 className="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
                   <Image
-                    src={!isOpen ? "/logo/umbartha_logo.svg" : "/logo/green.svg"}
+                    src={!isOpen && !scrolling ? "/logo/umbartha_logo.svg" : "/logo/green.svg"}
                     width={183.195}
                     height={39.376}
                     alt={""}

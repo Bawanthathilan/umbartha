@@ -21,14 +21,15 @@ export default function RootLayout({
   return (
 
     <html lang="en" suppressHydrationWarning>
-      <ParallaxProvider>
-        <body className={inter.className}>
+
+      <body className={inter.className}>
+        <ParallaxProvider>
           <NavBar />
           <ReduxProvider>{children}</ReduxProvider>
-
           <Footer />
-        </body>
-      </ParallaxProvider>
+        </ParallaxProvider>
+      </body>
+
     </html>
 
   );
