@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import Thubnail from '@/assets/home/videoSection/video.png'
 
-import { useParallax } from 'react-scroll-parallax';
+import { useParallax, ParallaxProvider } from 'react-scroll-parallax';
 
 import ParalaxImg from '@/assets/home/paralax/2.png'
 import ParalaxImg2 from '@/assets/home/paralax/3.png'

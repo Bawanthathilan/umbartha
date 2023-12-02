@@ -1,6 +1,5 @@
-
+"use client"
 import "./globals.css";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
 import ReduxProvider from "../redux/provider";
@@ -9,12 +8,9 @@ import Footer from "@/components/common/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import { ParallaxProvider } from 'react-scroll-parallax';
 
 
-export const metadata: Metadata = {
-  title: "Umbartha",
-  description: "Umbartha",
-};
 
 export default function RootLayout({
   children,
@@ -25,12 +21,14 @@ export default function RootLayout({
   return (
 
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <NavBar />
-        <ReduxProvider>{children}</ReduxProvider>
+      <ParallaxProvider>
+        <body className={inter.className}>
+          <NavBar />
+          <ReduxProvider>{children}</ReduxProvider>
 
-        <Footer />
-      </body>
+          <Footer />
+        </body>
+      </ParallaxProvider>
     </html>
 
   );
