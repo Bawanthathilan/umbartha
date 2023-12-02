@@ -131,33 +131,40 @@ const NavBar = () => {
         </div>
       </div>
       {/* mobile menu */}
-      <div className={isOpen ? " md:hidden flex " : "hidden"}>
-        <div className="flex flex-col px-4 pt-2 pb-3 space-y-1">
-          <Link href="/about">
-            <h4 className="py-5 px-3 text-gray-700 hover:text-gray-900">
-              About
-            </h4>
-          </Link>
-          <Link href="/services">
-            <h4 className="py-5 px-3 text-gray-700 hover:text-gray-900">
-              Services
-            </h4>
-          </Link>
-          <Link href="/contact">
-            <h4 className="py-5 px-3 text-gray-700 hover:text-gray-900">
-              Contact
-            </h4>
-          </Link>
-          <Link href="/login">
-            <h4 className="py-2 px-3 bg-yellow-400 hover:bg-yellow-500 text-yellow-900 hover:text-white transition duration-300">
-              Log In
-            </h4>
-          </Link>
-          <Link href="/signup">
-            <h4 className="py-2 px-3 text-gray-700 hover:text-gray-900">
-              Sign Up
-            </h4>
-          </Link>
+      <div className={isOpen ? " md:hidden flex bg-white" : "hidden"}>
+        <div className="div flex flex-row justify-start w-full px-10 py-10 gap-10">
+          <div className="menu flex flex-col gap-5 uppercase text-[#014840] text-lg font-bold">
+            <Link href='/' onClick={() => setIsOpen(!isOpen)} >
+              home
+            </Link>
+            <Link href='ourservices' onClick={() => setIsOpen(!isOpen)}>
+              Service
+            </Link>
+            <Link href='aboutUs' onClick={() => setIsOpen(!isOpen)}>
+              about
+            </Link>
+            <Link href='events' onClick={() => setIsOpen(!isOpen)}>
+              event
+            </Link>
+
+
+          </div>
+
+          <div className="menu flex flex-col gap-5 uppercase text-[#014840] text-lg font-bold">
+            <Link href='/inquery' onClick={() => setIsOpen(!isOpen)}>
+              Inquery
+            </Link>
+            <Link href='/healing' onClick={() => setIsOpen(!isOpen)}>
+              Healing
+            </Link>
+            <Link href='' onClick={() => setIsOpen(!isOpen)}>
+              gallery
+            </Link>
+            <Link href='/contact' onClick={() => setIsOpen(!isOpen)}>
+              contact
+            </Link>
+
+          </div>
         </div>
       </div>
     </nav>
