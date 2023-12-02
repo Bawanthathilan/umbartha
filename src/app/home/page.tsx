@@ -12,8 +12,8 @@ const HomePage = () => {
       <div className="bg-bg-image bg-cover">
         <div className="relative bg-cover bg-center text-center text-white">
           <div className=" h-screen flex justify-center items-center">
-            <div className="hero-text max-w-sm lg:max-w-7xl">
-              <h1 className=" text-[40px] lg:text-[64px] text-left lg:text-center font-bold leading-normal">A Dedicated Team <br /> committed to supporting <br /> with a listening ear </h1>
+            <div className="hero-text max-w-sm lg:max-w-7xl flex flex-col items-start lg:items-center px-10 md:px-0 lg:px-0">
+              <h1 className=" text-[40px] lg:text-[64px] text-left lg:text-center font-bold leading-normal ">A Dedicated Team <br /> committed to supporting <br /> with a listening ear </h1>
               <button className="bg-white mt-8 py-[14px] px-[51px] border-none text-[#082623] text-base">Learn More</button>
             </div>
           </div>
