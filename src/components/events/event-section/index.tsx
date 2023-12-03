@@ -38,7 +38,7 @@ const EventSection = () => {
             <div className=' absolute left-0 z-0 bottom-10'>
                 <Paralaxtwo />
             </div>
-            <div className="container mx-auto max-w-7xl">
+            <div className="container mx-auto max-w-7xl z-10">
                 <div className="flex flex-col gap-5">
                     <EventCard
                         img={Img1}
