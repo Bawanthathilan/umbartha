@@ -5,7 +5,7 @@ interface Card1Pros {
     img: any,
     title: string,
     description: string,
-    responsive: boolean
+    responsive?: boolean
 
 }
 
