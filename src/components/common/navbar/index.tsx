@@ -4,6 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import { data } from '@/data/index'
+import { useRouter } from 'next/navigation'
+
+
 
 
 import "./style.css";
@@ -12,9 +15,11 @@ import CustomButton from "../button";
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolling, setScrolling] = useState(false);
+  const router = useRouter()
+
 
   const handleClick = () => {
-    console.log("Button clicked!");
+    router.push('/dashboard');
   };
 
 
