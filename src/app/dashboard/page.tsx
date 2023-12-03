@@ -7,10 +7,9 @@ import Charts from "./charts/page";
 
 const DashboardPage = () => {
   return (
-    <Layout loggedUser={<LoggedUserPage />} guestUser={<GuestUserPage />}>
-      {/* Any other common elements across both dashboards */}
-      <Charts />
-    </Layout>
+    <div>
+      Hello
+    </div>
   );
 };
 
