@@ -5,12 +5,17 @@ import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import { data } from '@/data/index'
 import { useRouter } from 'next/navigation'
-
+import { motion } from "framer-motion"
 
 
 
 import "./style.css";
 import CustomButton from "../button";
+
+const DesktopNavVariants = {
+  open: { opacity: 1, x: 0, y: 10 },
+  closed: { opacity: 0, x: 0, y: 0 },
+}
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -81,7 +86,10 @@ const NavBar = () => {
       </div>
 
       <div className={isOpen ? " hidden lg:flex absolute top-0  -z-10 bg-white h-auto pb-10 right-0 w-full" : "hidden"}>
-        <div className="container mx-auto max-w-6xl w-full flex flex-col gap-5 mt-[8%]">
+        <motion.div
+          variants={DesktopNavVariants}
+          animate={isOpen ? "open" : "closed"}
+          className="container mx-auto max-w-6xl w-full flex flex-col gap-5 mt-[8%]">
           <div className="flex flex-row justify-between " >
             <div className="div flex flex-row gap-20 ">
               <div className="menu flex flex-col gap-10 uppercase text-[#014840] text-5xl font-bold">
@@ -150,7 +158,7 @@ const NavBar = () => {
           </div>
 
 
-        </div>
+        </motion.div>
 
 
       </div>
