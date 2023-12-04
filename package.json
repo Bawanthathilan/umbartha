@@ -17,6 +17,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "@types/redux-logger": "^3.0.11",
     "axios": "^1.5.1",
+    "framer-motion": "^10.16.12",
     "next": "13.5.4",
     "react": "^18",
     "react-bootstrap": "^2.9.0",

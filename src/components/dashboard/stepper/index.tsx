@@ -9,7 +9,7 @@ import StepConnector from '@mui/material/StepConnector';
 const steps = ['1', '2', '3', '4', '5'];
 
 const StepperSection = () => {
-    const [activeStep, setActiveStep] = React.useState(1);
+    const [activeStep, setActiveStep] = React.useState(0);
     const [skipped, setSkipped] = React.useState(new Set<number>());
 
     const isStepSkipped = (step: number) => {
