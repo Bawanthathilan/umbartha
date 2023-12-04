@@ -164,7 +164,10 @@ const NavBar = () => {
       </div>
       {/* mobile menu */}
       <div className={isOpen ? " md:hidden flex bg-white" : "hidden"}>
-        <div className="div flex flex-row justify-start w-full px-10 py-10 gap-10">
+        <motion.div
+          variants={DesktopNavVariants}
+          animate={isOpen ? "open" : "closed"}
+          className="div flex flex-row justify-start w-full px-10 py-10 gap-10">
           <div className="menu flex flex-col gap-5 uppercase text-[#014840] text-lg font-bold">
             <Link href='/' onClick={() => setIsOpen(!isOpen)} >
               home
@@ -197,7 +200,7 @@ const NavBar = () => {
             </Link>
 
           </div>
-        </div>
+        </motion.div>
       </div>
     </nav>
   );
