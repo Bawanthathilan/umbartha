@@ -1,4 +1,6 @@
-import React, { ReactNode } from "react";
+
+"use client"
+import React, { ReactNode, useState } from "react";
 import StepperSection from "@/components/dashboard/stepper";
 
 
@@ -8,14 +10,41 @@ interface LayoutProps {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  // Assume this function checks the user's login status
+  const [activeStep, setActiveStep] = useState(0);
+  const steps = ['1', '2', '3', '4', '5'];
+
+  const handleNext = () => {
+    setActiveStep((prevActiveStep) => {
+      const newStep = prevActiveStep + 1;
+      return newStep < steps.length ? newStep : prevActiveStep;
+    });
+  };
+
+  const handleBack = () => {
+    setActiveStep((prevActiveStep) => {
+      const newStep = prevActiveStep - 1;
+      return newStep >= 0 ? newStep : prevActiveStep;
+    });
+  };
+
   return (
     <div className="bg-hero-gradient h-screen flex flex-col justify-start">
       <div className=" container mx-auto bg-white max-w-6xl rounded-xl h-auto py-10 px-10 mt-40 ">
+        <button
+          onClick={handleNext}
+        >next</button>
+        <button
+          onClick={handleBack}
+        >back</button>
         <div className="header flex justify-between mb-10">
           <h3 className=" text-green-theme text-[20px] font-bold">Make An Appointment</h3>
 
-          <StepperSection />
+          <StepperSection
+            steps={steps}
+            activeStep={activeStep}
+            handleNext={handleNext}
+            handleBack={handleBack}
+          />
         </div>
 
         {children}

@@ -1,36 +1,10 @@
-import Image from "next/image";
+"use client"
+import SelectType from "@/components/dashboard/selectType";
 
 const DashboardPage = () => {
   return (
-    <div className="flex flex-col gap-10">
-      <div className="title flex w-full justify-start">
-        <h2 className=" font-bold text-[28px] text-black" >Select Appointment Type</h2>
-      </div>
-
-      <div className="grid grid-cols-2 gap-5">
-        <div className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer">
-          <div className="cont flex flex-col gap-10 justify-center items-center h-full ">
-            <div className="title flex flex-col items-center justify-center w-full">
-              <h4 className=" font-semibold text-[22px] text-[#484848] group-hover:text-green-theme">Book by a counsellor</h4>
-              <p className=" uppercase text-xs font-medium text-[#C5C5C5] group-hover:text-green-theme">Online or Physical</p>
-            </div>
-
-            <Image src="/icon/calander.svg" alt="icon" width={80} height={80} />
-
-          </div>
-        </div>
-
-        <div className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer">
-          <div className="cont flex flex-col gap-10 justify-center items-center h-full ">
-            <div className="title flex flex-col items-center justify-center w-full">
-              <h4 className=" font-semibold text-[22px] text-[#484848] group-hover:text-green-theme">Book by a date</h4>
-              <p className=" uppercase text-xs font-medium text-[#C5C5C5] group-hover:text-green-theme">Online or Physical</p>
-            </div>
-
-            <Image src="/icon/calander.svg" alt="icon" width={80} height={80} />
-          </div>
-        </div>
-      </div>
+    <div>
+      <SelectType />
     </div>
   );
 };
