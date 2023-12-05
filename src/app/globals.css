@@ -11,6 +11,10 @@ body{
   margin: 0%;
 }
 
+.MuiDateCalendar-root{
+  margin: 0% !important;
+}
+
 .swiper-wrapper{
 padding-top: 20px;
 padding-bottom: 20px;

@@ -28,7 +28,7 @@ const Layout = ({ children }: LayoutProps) => {
   };
 
   return (
-    <div className="bg-hero-gradient h-screen flex flex-col justify-start">
+    <div className="bg-hero-gradient h-auto flex flex-col justify-start pb-10">
       <div className=" container mx-auto bg-white max-w-6xl rounded-xl h-auto py-10 px-10 mt-40 ">
         <button
           onClick={handleNext}
