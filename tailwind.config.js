@@ -26,7 +26,10 @@ module.exports = {
 
       colors: {
         "bg-white-varient": "#F9F6F3",
+        "green-theme": "#26AF9F",
       },
+
+      animation: {},
     },
   },
   plugins: [],

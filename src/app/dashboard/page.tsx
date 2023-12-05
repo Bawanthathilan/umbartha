@@ -1,16 +1,11 @@
-import Layout from "./layout";
-
-import LoggedUserPage from "./@loggedUser/page";
-import GuestUserPage from "./@guestUser/page";
-
-import Charts from "./charts/page";
+"use client"
+import SelectType from "@/components/dashboard/selectType";
 
 const DashboardPage = () => {
   return (
-    <Layout loggedUser={<LoggedUserPage />} guestUser={<GuestUserPage />}>
-      {/* Any other common elements across both dashboards */}
-      <Charts />
-    </Layout>
+    <div>
+      <SelectType />
+    </div>
   );
 };
 
