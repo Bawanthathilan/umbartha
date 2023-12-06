@@ -22,8 +22,8 @@ const PatientCard = ({
             <Image src={img} alt='manisha' width={60} height={60} className='rounded-full' />
 
             <div className="rigth flex flex-col gap-0 ">
-                <h4 className='text-[20px] font-semibold'>{name}</h4>
-                <p className='text-sm font-medium'>{designation}</p>
+                <h4 className=' text-base md:text-[20px] font-semibold'>{name}</h4>
+                <p className=' text-sm font-medium'>{designation}</p>
             </div>
 
             <span className='text-sm font-medium'>{year}yr</span>

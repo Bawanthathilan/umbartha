@@ -9,9 +9,9 @@ const page = () => {
             </div>
 
             <div className="form flex flex-col gap-5">
-                <div className="flex gap-5">
+                <div className="flex flex-col md:flex-row gap-5">
                     <input type="text" placeholder='Enter yor name' className=' w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]' />
-                    <input type="text" placeholder='Enter yor age' className='w-1/2 rounded-xl py-3 px-4 border-2 border-[#ECECEC;]' />
+                    <input type="text" placeholder='Enter yor age' className=' w-full md:w-1/2 rounded-xl py-3 px-4 border-2 border-[#ECECEC;]' />
                 </div>
                 <input type="text" placeholder='Enter yor email' className='w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]' />
                 <input type="text" placeholder='Phone' className='w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]' />

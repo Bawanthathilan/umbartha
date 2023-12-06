@@ -11,10 +11,10 @@ const SelectType = () => {
     return (
         <div className="flex flex-col gap-10">
             <div className="title flex w-full justify-start">
-                <h2 className=" font-bold text-[28px] text-black" >Select Appointment Type</h2>
+                <h2 className=" font-bold text-xl md:text-[28px] text-black" >Select Appointment Type</h2>
             </div>
 
-            <div className="grid grid-cols-2 gap-5">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <div className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer"
                     onClick={() => router.push('/dashboard/counsellor')}
                 >

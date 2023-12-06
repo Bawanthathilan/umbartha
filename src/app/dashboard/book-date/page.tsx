@@ -14,7 +14,7 @@ const page = () => {
                 <div className="title">
                     <h4 className='text-[#666] text-sm font-semibold uppercase'>Choose type</h4>
                 </div>
-                <div className=' flex flex-row gap-5'>
+                <div className=' flex flex-col md:flex-row gap-5'>
                     <div className="flex w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
                         <div className="flex">
                             <div className="cont">
@@ -35,7 +35,7 @@ const page = () => {
 
             </div>
 
-            <div className="flex flex-row gap-5 justify-between">
+            <div className="flex flex-col md:flex-row gap-5 justify-between">
                 <div className="calender">
                     <div className="title">
                         <h4 className='text-[#666] text-sm font-semibold uppercase'>Select Date and Time</h4>

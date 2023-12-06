@@ -9,8 +9,8 @@ import DateChip from '@/components/dashboard/common/DateChip';
 
 const page = () => {
     return (
-        <div className='flex flex-row gap-6 w-full'>
-            <div className="left flex w-1/2 flex-col gap-5">
+        <div className='flex flex-col md:flex-row gap-6 w-full'>
+            <div className="left flex w-full md:w-1/2 flex-col gap-5">
                 <div className="search">
                     <input type="text" placeholder='Search' className='w-full rounded-[40px] py-3 px-4 border-2 border-[#ECECEC;]' />
                 </div>
@@ -67,7 +67,7 @@ const page = () => {
                     <div className="title">
                         <h4 className='text-[#666] text-sm font-semibold uppercase'>Choose type</h4>
                     </div>
-                    <div className=' flex flex-row gap-5'>
+                    <div className=' flex flex-col md:flex-row gap-5'>
                         <div className="flex w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
                             <div className="flex">
                                 <div className="cont">
@@ -88,7 +88,7 @@ const page = () => {
 
                 </div>
 
-                <div className="div flex flex-row gap-5">
+                <div className="div flex flex-col md:flex-row gap-5">
 
                     <div className="calender">
                         <div className="title">
