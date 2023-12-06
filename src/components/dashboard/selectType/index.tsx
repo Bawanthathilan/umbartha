@@ -29,7 +29,9 @@ const SelectType = () => {
                     </div>
                 </div>
 
-                <div className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer">
+                <div className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer"
+                    onClick={() => router.push('/dashboard/book-date')}
+                >
                     <div className="cont flex flex-col gap-10 justify-center items-center h-full ">
                         <div className="title flex flex-col items-center justify-center w-full">
                             <h4 className=" font-semibold text-[22px] text-[#484848] group-hover:text-green-theme">Book by a date</h4>
