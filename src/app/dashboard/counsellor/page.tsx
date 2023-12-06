@@ -1,13 +1,13 @@
+"use client"
 import React from 'react'
-import PatientCard from '../common/patientCard'
+import PatientCard from '@/components/dashboard/common/patientCard';
 import Image from 'next/image'
 import manisha from '@/assets/home/aboutus/manisha.png'
-import Calender from '../common/Calender'
-import DateChip from '../common/DateChip'
+import Calender from '@/components/dashboard/common/Calender';
+import DateChip from '@/components/dashboard/common/DateChip';
 
 
-
-const Counsellor = () => {
+const page = () => {
     return (
         <div className='flex flex-row gap-6 w-full'>
             <div className="left flex w-1/2 flex-col gap-5">
@@ -131,4 +131,4 @@ const Counsellor = () => {
     )
 }
 
-export default Counsellor
+export default page
