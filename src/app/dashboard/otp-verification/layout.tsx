@@ -7,12 +7,12 @@ interface LayoutProps {
 
 const Layout = ({ children }: LayoutProps) => {
     return (
-        <div className='flex flex-row justify-between'>
-            <div className="profile w-4/5 border-r-2  ">
+        <div className='flex flex-row gap-7 justify-between'>
+            <div className="profile w-4/5 border-r-2 border-spacing-x-0.5  ">
                 <SideProfile />
             </div>
 
-            <div className="right w-full ">
+            <div className="right w-full">
                 {children}
             </div>
         </div>
