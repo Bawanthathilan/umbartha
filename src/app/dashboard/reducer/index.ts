@@ -5,6 +5,8 @@ interface LayoutDataState {
   loading: boolean;
   error: string | null;
   fieldData: any;
+
+  stepCount: number;
 }
 
 const initialState: LayoutDataState = {
@@ -12,6 +14,7 @@ const initialState: LayoutDataState = {
   loading: false,
   error: null,
   fieldData: null,
+  stepCount: 0,
 };
 
 const dashboardSlice = createSlice({
@@ -31,9 +34,19 @@ const dashboardSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
+
+    // stepper
+    stepCountIncrease: (state, action: PayloadAction<any>) => {
+      console.log("sdsd", action.payload)
+      state.stepCount = action.payload;
+    },
+
+    stepCountDecrease: (state, action: PayloadAction<any>) => {
+      state.stepCount = action.payload;
+    }
   },
 });
 
-export const { testRequest, testSuccess, testFailure } = dashboardSlice.actions;
+export const { testRequest, testSuccess, testFailure, stepCountDecrease, stepCountIncrease } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;
