@@ -1,6 +1,32 @@
+"use client"
 import React from 'react'
+import { useRouter } from 'next/navigation';
+import { stepCountIncrease } from '@/app/dashboard/reducer/index'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 
-const page = () => {
+const Page = () => {
+    const dispatch = useAppDispatch();
+    const router = useRouter();
+    const countNo = useAppSelector((state) => state.dashboard.stepCount);
+
+    const getOtp = () => {
+        dispatch(stepCountIncrease(3))
+        if (countNo === 3) {
+            router.push('/dashboard/otp-verification/verify')
+        }
+        return
+    }
+
+    const back = () => {
+        dispatch(stepCountIncrease(1))
+        if (countNo === 1) {
+            router.push('/dashboard/counsellor')
+        }
+        return
+    }
+
+
+
     return (
         <div className='flex flex-col gap-5'>
             <div className="title">
@@ -13,8 +39,8 @@ const page = () => {
 
                 <div className="flex flex-row items-end justify-end">
                     <div className="flex flex-row gap-5 font-semibold text-base">
-                        <button>Back</button>
-                        <button className='bg-[#272727] rounded-xl py-[17px] px-[40px] text-white' >Get OTP</button>
+                        <button onClick={back}>Back</button>
+                        <button className='bg-[#272727] rounded-xl py-[17px] px-[40px] text-white' onClick={getOtp} >Get OTP</button>
                     </div>
                 </div>
             </div>
@@ -22,4 +48,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

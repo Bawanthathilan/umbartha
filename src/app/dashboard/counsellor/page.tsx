@@ -5,9 +5,26 @@ import Image from 'next/image'
 import manisha from '@/assets/home/aboutus/manisha.png'
 import Calender from '@/components/dashboard/common/Calender';
 import DateChip from '@/components/dashboard/common/DateChip';
+import { useRouter } from 'next/navigation';
+
+import { stepCountIncrease } from '@/app/dashboard/reducer/index'
+import { useAppDispatch, useAppSelector } from '@/hooks/reduxHooks';
 
 
-const page = () => {
+
+const Page = () => {
+    const dispatch = useAppDispatch();
+    const router = useRouter();
+    const countNo = useAppSelector((state) => state.dashboard.stepCount);
+
+    const ProceedAction = () => {
+        dispatch(stepCountIncrease(2))
+        if (countNo === 2) {
+            router.push('/dashboard/otp-verification')
+        }
+        return
+    }
+
     return (
         <div className='flex flex-col md:flex-row gap-6 w-full'>
             <div className="left flex w-full md:w-1/2 flex-col gap-5">
@@ -59,7 +76,11 @@ const page = () => {
                     </div>
 
 
-                    <button className='bg-black py-[17px] px-10  text-white text-sm font-medium rounded-xl'>Proceed</button>
+                    <button
+                        onClick={ProceedAction}
+                        className='bg-black py-[17px] px-10  text-white text-sm font-medium rounded-xl'
+
+                    >Proceed</button>
                 </div>
 
                 <div className="flex flex-col gap-5">
@@ -131,4 +152,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

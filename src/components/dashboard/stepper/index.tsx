@@ -7,7 +7,7 @@ import StepLabel from '@mui/material/StepLabel';
 
 
 interface StepperProps {
-    activeStep: number;
+    activeStep: any;
     steps: Array<any>
     handleNext: () => void;
     handleBack: () => void;
