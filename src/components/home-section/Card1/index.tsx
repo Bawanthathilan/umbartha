@@ -16,7 +16,7 @@ const Card1 = ({
     responsive = true
 }: Card1Pros) => {
     return (
-        <div className=' bg-white rounded-lg py-[23px] px-8 w-full max-w-full lg:max-w-[291px]'>
+        <div className=' bg-white rounded-lg py-[23px] px-8 w-full max-w-full lg:max-w-[291px] h-[300px] max-h-[370px]'>
 
             <div className={`flex ${responsive ? "flex-row lg:flex-col" : "flex-col lg:flex-col"}  justify-between gap-10`}>
                 <div className="img w-[95px] h-[95px] relative">

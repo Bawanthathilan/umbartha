@@ -38,9 +38,9 @@ const VideoSection = () => {
       <div className='top bg-white pt-[37px] h-full relative'>
 
         <div className="container mx-auto z-10 ">
-          <div className="title flex flex-col items-center text-center gap-3 relative z-10">
+          <div className="title flex flex-col items-center text-center gap-0 relative z-10">
             <h4 className=' text-black text-[20px] lg:text-[32px] font-medium'>Umbartha Makes You</h4>
-            <h1 className='text-black font-bold text-[32px] lg:text-[48px]'>Better and Better Every Day,
+            <h1 className='text-black font-bold text-[32px] lg:text-[48px]'>Better and Better Every Day,<br />
               in Every Way</h1>
           </div>
 
