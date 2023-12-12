@@ -1,4 +1,17 @@
 .slider-container {
-    background: linear-gradient(180deg, rgba(215, 197, 183, 0.00) 0%, #E4D8CF 23.38%, #f7f2ee 100%);
-    
+  background: linear-gradient(
+    180deg,
+    rgba(215, 197, 183, 0) 0%,
+    #e4d8cf 52.38%,
+    #f7f2ee 100%
+  );
+}
+
+.slider-containertwo {
+  background: linear-gradient(
+    0deg,
+    rgb(247 242 238) 0%,
+    #f7f2ee 23.38%,
+    #f7f3ef 100%
+  );
 }
