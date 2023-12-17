@@ -16,7 +16,7 @@ const page = () => {
       <HeroSectionImg title="Trauma Healing" img={Bgimg} />
 
       <div className="bg-bg-white-varient py-[60px] px-5 lg:px-0">
-        <div className="container mx-auto max-w-7xl">
+        <div className="container mx-auto  max-w-7xl lg:max-w-[1000px]">
           <p className="text-[#303030] text-base lg:text-2xl font-normal">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad
