@@ -26,17 +26,19 @@ const page = () => {
         </div>
 
         <div className="section-3 container mx-auto max-w-7xl mt-10 lg:mt-[80px]">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 items-center gap-5 lg:gap-10 text-center  lg:text-left">
-            <div className="manisha relative w-auto lg:h-full h-[400px]">
-              <Image
-                src={manisha}
-                alt="manisha"
-                fill
-                className="object-contain object-center lg:object-left"
-              />
+          <div className=" flex flex-col lg:flex-row items-end gap-5 lg:gap-16 text-center  lg:text-left">
+            <div className="w-full lg:w-auto">
+              <div className="manisha relative w-auto lg:w-[345px] lg:h-[400px] h-[400px]">
+                <Image
+                  src={manisha}
+                  alt="manisha"
+                  fill
+                  className="object-cover object-center lg:object-left"
+                />
+              </div>
             </div>
 
-            <div className="right flex flex-col gap-5">
+            <div className="right w-full flex flex-col gap-5">
               <div className="title flex flex-col  gap-5">
                 <h4 className=" text-2xl lg:text-[40px] text-[#26AF9F] font-semibold">
                   Dr. Gabor Maté
