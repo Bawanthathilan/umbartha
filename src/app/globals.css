@@ -33,6 +33,10 @@ body {
   backdrop-filter: blur(5px);
 }
 
+.teventcard2 {
+  backdrop-filter: blur(5px);
+}
+
 @media only screen and (max-width: 600px) {
   .eventSwiper .swiper-slide {
     padding-left: 20px;

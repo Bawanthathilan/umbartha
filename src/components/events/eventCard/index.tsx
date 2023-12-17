@@ -16,9 +16,9 @@ interface EventCardProps {
 
 const EventCard = ({ img, time, title, platform, date }: EventCardProps) => {
   return (
-    <div className="bg-white w-full pr-5 lg:pr-0 pl-5">
+    <div className="teventcard2 w-full pr-5 lg:pr-0 pl-5">
       <div className=" flex flex-col lg:flex-row justify-between z-[1]">
-        <div className="left flex flex-col gap-5 py-10 items-start z-[1]">
+        <div className="left flex flex-col max-w-3xl gap-5 py-10 items-start z-[1]">
           <div className="date flex flex-row gap-5 text-[#4B4B4B] text-[11px]">
             <div className="item flex flex-row gap-3 items-center justify-start">
               <IoCalendarOutline />
