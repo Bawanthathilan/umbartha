@@ -72,6 +72,7 @@ const Footer = () => {
                 InputProps={{
                   style: {
                     borderColor: "red",
+                    color: "white",
                   },
                 }}
                 sx={{
