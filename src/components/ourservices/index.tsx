@@ -134,8 +134,8 @@ const OurServicesSection = () => {
         </div>
       </div>
 
-      <div className="section-3">
-        <div className="container mx-auto max-w-7xl py-[60px]">
+      <div className="section-3 bg-white">
+        <div className="container mx-auto max-w-7xl pt-[100px] lg:pt-[145px] pb-[70px]">
           <div className="title w-full flex flex-col justify-center items-center gap-5 px-5 lg:px-0">
             <h4 className=" text-[20px] lg:text-[32px] font-medium">
               Umbartha Makes You
@@ -146,7 +146,7 @@ const OurServicesSection = () => {
           </div>
         </div>
 
-        <div className=" grid grid-cols-4 w-full h-auto lg:h-[500px] justify-between">
+        <div className=" grid grid-cols-5 w-full h-auto lg:h-[500px] justify-between">
           <Image src={Img1} alt="img1" className="w-full h-full object-cover" />
           <Image src={Img2} alt="img1" className="w-full h-full object-cover" />
           <Image
@@ -156,6 +156,11 @@ const OurServicesSection = () => {
           />
           <Image
             src={Img4}
+            alt="img1"
+            className="w-full  h-full object-cover "
+          />
+          <Image
+            src={Img5}
             alt="img1"
             className="w-full  h-full object-cover "
           />
