@@ -58,7 +58,7 @@ const VideoSection = () => {
             <h4 className=" text-black text-[20px] lg:text-[32px] font-medium">
               Umbartha Makes You
             </h4>
-            <h1 className="text-black font-bold text-[32px] lg:text-[48px]">
+            <h1 className="text-black font-bold text-[32px] leading-[1.2] lg:text-[48px]">
               Better and Better Every Day,
               <br className=" hidden md:block" />
               in Every Way
@@ -66,7 +66,7 @@ const VideoSection = () => {
           </div>
         </div>
         <div className="relative w-full">
-          <div className="video relative max-w-xs lg:max-w-7xl h-[250px] lg:h-[500px] w-auto container mx-auto z-10">
+          <div className="video relative max-w-sm lg:max-w-7xl h-[200px] lg:h-[500px] w-auto container mx-auto z-10">
             <Image
               src={Thubnail}
               alt="thumbnail"

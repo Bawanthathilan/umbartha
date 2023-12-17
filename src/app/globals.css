@@ -28,6 +28,11 @@ body {
   padding-bottom: 38px !important;
 }
 
+.testimonial_card {
+  background: rgba(255, 255, 255, 0.44);
+  backdrop-filter: blur(5px);
+}
+
 @media only screen and (max-width: 600px) {
   .eventSwiper .swiper-slide {
     padding-left: 20px;
