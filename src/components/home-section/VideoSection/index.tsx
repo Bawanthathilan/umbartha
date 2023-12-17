@@ -60,7 +60,7 @@ const VideoSection = () => {
             </h4>
             <h1 className="text-black font-bold text-[32px] lg:text-[48px]">
               Better and Better Every Day,
-              <br />
+              <br className=" hidden md:block" />
               in Every Way
             </h1>
           </div>
