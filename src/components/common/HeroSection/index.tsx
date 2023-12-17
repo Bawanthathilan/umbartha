@@ -1,8 +1,8 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface HeroSectionProps {
   subtitle?: string;
-  title: string;
+  title: string | ReactNode;
   desc?: string;
   left?: boolean;
 }
@@ -23,7 +23,7 @@ const HeroSection = ({
         <h4 className=" uppercase text-xl font-bold text-[#014840]">
           {subtitle}
         </h4>
-        <h1 className=" text-[40px] lg:text-[52px] font-bold text-black max-w-2xl text-left lg:text-center leading-[1.2] lg:leading-[1.2]">
+        <h1 className=" text-[40px] lg:text-[52px] font-bold text-black max-w-3xl text-left lg:text-center leading-[1.2] lg:leading-[1.2]">
           {title}
         </h1>
         <p className=" text-[20px] font-normal text-left lg:text-center max-w-6xl">
