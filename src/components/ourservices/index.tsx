@@ -136,11 +136,11 @@ const OurServicesSection = () => {
 
       <div className="section-3 bg-white">
         <div className="container mx-auto max-w-7xl pt-[100px] lg:pt-[145px] pb-[70px]">
-          <div className="title w-full flex flex-col justify-center items-center gap-5 px-5 lg:px-0">
+          <div className="title w-full flex flex-col justify-center items-center gap-5 px-5 lg:px-0 ">
             <h4 className=" text-[20px] lg:text-[32px] font-medium">
               Umbartha Makes You
             </h4>
-            <h1 className=" font-bold text-[28px] lg:text-5xl max-w-3xl text-center">
+            <h1 className=" font-bold text-[28px] lg:text-5xl max-w-3xl text-center leading-[1.2] lg:leading-[1.2]">
               Better and Better Every Day, in Every Way
             </h1>
           </div>

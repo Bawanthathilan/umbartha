@@ -58,7 +58,7 @@ const VideoSection = () => {
             <h4 className=" text-black text-[20px] lg:text-[32px] font-medium">
               Umbartha Makes You
             </h4>
-            <h1 className="text-black font-bold text-[32px] leading-[1.2] lg:text-[48px]">
+            <h1 className="text-black font-bold text-[32px] leading-[1.2] lg:leading-[1.2] lg:text-[48px]">
               Better and Better Every Day,
               <br className=" hidden md:block" />
               in Every Way
@@ -80,7 +80,7 @@ const VideoSection = () => {
         <div className="bottom bg-[#004139] h-[550px] lg:h-[600px] w-full inset-0 ">
           <div className="grid grid-cols-1 lg:grid-cols-2 h-full max-w-7xl mx-auto z-10">
             <div className="content z-10 flex flex-col h-auto justify-end md:justify-center lg:justify-end pb-10 lg:pb-[145px] px-10 lg:px-0 w-full max-w-5xl text-white gap-5">
-              <h1 className=" text-[32px] lg:text-5xl font-bold">
+              <h1 className=" text-[32px] lg:text-5xl font-bold leading-[1.2] lg:leading-[1.2]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit
               </h1>
               <p className=" text-[16px] lg:text-xl font-medium">
