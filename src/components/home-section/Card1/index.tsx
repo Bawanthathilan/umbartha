@@ -10,7 +10,7 @@ interface Card1Pros {
 
 const Card1 = ({ img, title, description, responsive = true }: Card1Pros) => {
   return (
-    <div className=" bg-white rounded-lg py-[23px] px-8 w-full max-w-full lg:max-w-[291px] h-auto lg:h-[300px] max-h-[370px]">
+    <div className=" bg-white rounded-lg py-[23px] px-8 w-full max-w-full lg:max-w-full h-auto lg:h-[300px] max-h-[370px]">
       <div
         className={`flex ${
           responsive ? "flex-row lg:flex-col" : "flex-col lg:flex-col"

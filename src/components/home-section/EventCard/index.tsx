@@ -15,7 +15,7 @@ interface EventcardProps {
 
 const EventCard = ({ img, tag, title, date, time, link }: EventcardProps) => {
   return (
-    <div className="flex flex-col justify-between w-full max-w-full lg:max-w-[292px] rounded-xl shadow hover:shadow-lg ">
+    <div className="flex flex-col justify-between w-full max-w-full lg:max-w-full rounded-xl shadow hover:shadow-lg ">
       <div className="header relative w-full h-[250px]">
         <Image
           src={img}

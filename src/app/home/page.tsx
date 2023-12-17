@@ -23,11 +23,11 @@ const HomePage = () => {
         </div>
         <div className="absolute inset-x-0 bottom-0 h-[150px] slider-container" />
       </div>
-      <div className="h-[400px] lg:h-[400px] flex flex-col items-center text-center justify-center gap-[37px] px-6 lg:px-0 slider-containertwo ">
-        <h2 className=" text-3xl lg:text-5xl text-[#082623] font-bold leading-[1.2]">
+      <div className="h-[400px] lg:h-[400px] flex flex-col items-center text-center justify-center gap-[37px] px-6 lg:px-0 slider-containertwo  ">
+        <h2 className=" text-3xl lg:text-5xl text-[#082623] font-bold leading-[1.2] lg:leading-[1.2]">
           Access medical specialists <br /> anywhere, anytime
         </h2>
-        <p className=" text-base lg:text-2xl text-[#082623] font-normal ">
+        <p className=" text-base lg:text-2xl text-[#082623] font-normal  ">
           Umbartha connects patients to high quality and affordable
           psychiatrists and other mental health <br /> professionals via secure
           telehealth video consultations anywhere across Australia.

@@ -2,36 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
-.MuiPaper-root{
+.MuiPaper-root {
   box-shadow: none;
-  background-color:#F4F4F4 ;
+  background-color: #f4f4f4;
 }
 
-body{
+body {
   margin: 0%;
 }
 
-.MuiDateCalendar-root{
+.MuiDateCalendar-root {
   margin: 0% !important;
 }
 
-.swiper-wrapper{
-padding-top: 20px;
-padding-bottom: 20px;
+.swiper-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-.eventSwiper .swiper-slide{
+.eventSwiper .swiper-slide {
   padding-left: 0px;
   padding-right: 0px;
 }
 
+.swiper {
+  padding-bottom: 38px !important;
+}
 
+.testimonial_card {
+  background: rgba(255, 255, 255, 0.44);
+  backdrop-filter: blur(5px);
+}
+
+.teventcard2 {
+  backdrop-filter: blur(5px);
+}
 
 @media only screen and (max-width: 600px) {
-  .eventSwiper .swiper-slide{
+  .eventSwiper .swiper-slide {
     padding-left: 20px;
     padding-right: 20px;
-  
-   
+  }
+
+  .swiper {
+    padding-bottom: 24px !important;
   }
 }
 

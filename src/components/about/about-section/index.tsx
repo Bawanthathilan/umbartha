@@ -48,9 +48,9 @@ const AboutSection = () => {
         <div className="container mx-auto max-w-7xl px-5 lg:px-0">
           <div className="section-1 flex flex-col gap-10">
             <h1 className=" text-xl lg:text-[42px] text-[#082623] font-semibold leading-normal lg:leading-[50px] z-10">
-              Our solar panels are designed to be highly efficient, delivering
-              maximum solar production year-round, even on roofs with
-              complicated angles.
+              Our solar panels are designed to be highly efficient,{" "}
+              <br className="hidden lg:block" /> delivering maximum solar
+              production year-round, even on roofs with complicated angles.
             </h1>
             <p className="text-[#4E4E4E] text-base lg:text-xl font-normal">
               Umbartha, a Marathi word meaning ‘threshold’ was originally chosen
@@ -68,7 +68,7 @@ const AboutSection = () => {
           <div className="secton-2 my-10 ">
             <div className="container mx-auto max-w-7xl">
               <div className="grid grid-cols-2 items-baseline gap-3 lg:gap-5">
-                <div className="itemOne flex flex-col gap-5">
+                <div className="itemOne flex flex-col gap-10">
                   <div className="img relative h-[367px] lg:h-[587px] w-full">
                     <Image
                       src={Yoga}
@@ -78,7 +78,7 @@ const AboutSection = () => {
                     />
                   </div>
 
-                  <div className="details flex flex-col">
+                  <div className="details hidden md:flex flex-col gap-5 ">
                     <h4 className=" text-xl lg:text-[28px] font-semibold">
                       Vision
                     </h4>
@@ -90,7 +90,7 @@ const AboutSection = () => {
                   </div>
                 </div>
 
-                <div className="itemTwo flex flex-col gap-5">
+                <div className="itemTwo flex flex-col gap-10">
                   <div className="img relative h-[281px] lg:h-[443px] w-full">
                     <Image
                       src={Write}
@@ -99,7 +99,7 @@ const AboutSection = () => {
                       className=" rounded-xl object-cover"
                     />
                   </div>
-                  <div className="details flex flex-col">
+                  <div className="details hidden md:flex flex-col gap-5">
                     <h4 className=" text-xl lg:text-[28px] font-semibold">
                       Mission
                     </h4>
@@ -112,6 +112,28 @@ const AboutSection = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+              <div className="details mt-10 flex md:hidden flex-col ">
+                <h4 className=" text-xl lg:text-[28px] font-semibold">
+                  Vision
+                </h4>
+                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                  Our vision is to support with a listening ear and an
+                  empathetic heart in an integrated and relational counseling
+                  practise.
+                </p>
+              </div>
+              <div className="details mt-[38px] flex md:hidden flex-col">
+                <h4 className=" text-xl lg:text-[28px] font-semibold">
+                  Mission
+                </h4>
+                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                  Our mission is to serve the community by bringing healing and
+                  hope to individuals, families, couples, and others seeking
+                  emotional and relational wellbeing as well as wholesome
+                  interpersonal relationships through professional counselling
+                  care.
+                </p>
               </div>
             </div>
           </div>
@@ -175,20 +197,36 @@ const AboutSection = () => {
         <div className="strip bg-[#F1EFEC] py-[45px] mt-10 lg:mt-0">
           <div className="container mx-auto max-w-7xl grid grid-cols-2 gap-5 lg:gap-0 lg:flex lg:flex-row justify-between">
             <div className="number flex flex-col gap-3 items-center">
-              <h1 className="text-[#595959] text-7xl font-semibold">18</h1>
-              <h4 className="text-blac text-lg font-medium">Award Winner</h4>
+              <h1 className="text-[#595959] text-[40px] lg:text-7xl font-semibold">
+                18
+              </h1>
+              <h4 className="text-blac text-sm md:text-lg font-medium">
+                Award Winner
+              </h4>
             </div>
             <div className="number flex flex-col gap-3 items-center">
-              <h1 className="text-[#595959] text-7xl font-semibold">290</h1>
-              <h4 className="text-blac text-lg font-medium">Psychologist</h4>
+              <h1 className="text-[#595959] text-[40px] lg:text-7xl font-semibold">
+                290
+              </h1>
+              <h4 className="text-blac text-sm md:text-lg font-medium">
+                Psychologist
+              </h4>
             </div>
             <div className="number flex flex-col gap-3 items-center">
-              <h1 className="text-[#595959] text-7xl font-semibold">1k+</h1>
-              <h4 className="text-blac text-lg font-medium">Happy Clients</h4>
+              <h1 className="text-[#595959] text-[40px] lg:text-7xl font-semibold">
+                1k+
+              </h1>
+              <h4 className="text-blac text-sm md:text-lg font-medium">
+                Happy Clients
+              </h4>
             </div>
             <div className="number flex flex-col gap-3 items-center">
-              <h1 className="text-[#595959] text-7xl font-semibold">18</h1>
-              <h4 className="text-blac text-lg font-medium">Award Winner</h4>
+              <h1 className="text-[#595959] text-[40px] lg:text-7xl font-semibold">
+                18
+              </h1>
+              <h4 className="text-blac text-sm md:text-lg font-medium">
+                Award Winner
+              </h4>
             </div>
           </div>
         </div>
