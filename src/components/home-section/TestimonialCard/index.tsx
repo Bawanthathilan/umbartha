@@ -11,8 +11,8 @@ interface TestimonialCardProps {
 const TestimonialCard = ({ title, img, name, desc }: TestimonialCardProps) => {
   return (
     <div className=" testimonial_card py-[50px] px-5 h-[353px] relative">
-      <span className=" absolute top-0  text-[64px] text-[#00000033]">
-        &quot;
+      <span className=" absolute top-0  text-[64px] text-[#00000033] font-bold">
+        “
       </span>
       <div className="flex flex-col justify-between h-full w-full">
         <h3 className="text-[22px] font-bold text-black">{title}</h3>
