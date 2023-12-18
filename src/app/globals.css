@@ -37,6 +37,15 @@ body {
   backdrop-filter: blur(5px);
 }
 
+.testimonialSwiper .swiper-pagination .swiper-pagination-bullet {
+  width: 14px;
+  height: 14px;
+}
+
+.testimonialSwiper .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: black !important;
+}
+
 @media only screen and (max-width: 600px) {
   .eventSwiper .swiper-slide {
     padding-left: 20px;

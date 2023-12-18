@@ -52,7 +52,7 @@ const Testimonial = () => {
               },
             }}
             modules={[Pagination]}
-            className="mySwiper mt-[18px]"
+            className="testimonialSwiper mt-[18px]"
           >
             <SwiperSlide>
               <TestimonialCard
@@ -72,6 +72,22 @@ const Testimonial = () => {
               />
             </SwiperSlide>
 
+            <SwiperSlide>
+              <TestimonialCard
+                img={Image1}
+                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
+                name="Lois Whittaker"
+                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <TestimonialCard
+                img={Image1}
+                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
+                name="Lois Whittaker"
+                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
+              />
+            </SwiperSlide>
             <SwiperSlide>
               <TestimonialCard
                 img={Image1}
