@@ -40,7 +40,7 @@ const Footer = () => {
                     {item.title}
                   </h3>
 
-                  <ul className="list-none">
+                  <ul className="list-none grid grid-rows-4 grid-flow-col gap-x-[40px] gap-y-3">
                     {item.items.map((item, index) => (
                       <li key={index}>
                         <Link
