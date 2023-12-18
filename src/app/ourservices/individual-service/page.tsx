@@ -73,10 +73,10 @@ const page = () => {
 
           <div className="sec2 mt-11 lg:mt-[190px]">
             <div className="title grid grid-cols-1 lg:grid-cols-2 gap-5">
-              <h1 className=" text-4xl lg:text-5xl font-bold">
+              <h1 className=" text-4xl lg:text-5xl font-bold leading-[1.2] lg:leading-[1.2]">
                 Transform with therapy, galleries showcasing healing images
               </h1>
-              <h4 className=" text-[16px] lg:text-[20px] font-normal">
+              <h4 className=" text-[16px] lg:text-[20px] font-normal leading-[1.2] lg:leading-[1.2]">
                 Aliquet nec ullamcorper sit amet risus nullam. Purus in mollis
                 nunc sed id semper risus in. Purus sit amet volutpat consequat
                 mauris nunc congue nisi. Pharetra et ultrices neque ornare
