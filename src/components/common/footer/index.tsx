@@ -33,14 +33,14 @@ const Footer = () => {
           </div>
 
           <div className="menu flex flex-row gap-6">
-            <div className="grid grid-cols-2 grid-flow-row sm:flex mt-10 md:mt-0 lg:mt-0 sm:justify-between px-0 sm:px-5 md:px-0 lg:px-0 gap-7 sm:gap-5 md:gap-0 lg:gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 grid-flow-row sm:flex mt-10 md:mt-0 lg:mt-0 sm:justify-between px-0 sm:px-5 md:px-0 lg:px-0 gap-7 sm:gap-5 md:gap-0 lg:gap-10">
               {data.footerLinks.map((item, index) => (
                 <div className="menu_links" key={index}>
                   <h3 className="mb-[9px] text-[14px] font-medium text-[#B5C1C8]">
                     {item.title}
                   </h3>
 
-                  <ul className="list-none">
+                  <ul className="list-none grid grid-rows-4 grid-flow-col gap-x-[40px] gap-y-2 lg:gap-y-2">
                     {item.items.map((item, index) => (
                       <li key={index}>
                         <Link
@@ -72,6 +72,7 @@ const Footer = () => {
                 InputProps={{
                   style: {
                     borderColor: "red",
+                    color: "white",
                   },
                 }}
                 sx={{
