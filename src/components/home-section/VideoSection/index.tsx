@@ -31,8 +31,40 @@ function Paralaxthree() {
       <Image
         src={ParalaxImg2}
         alt="paralax"
-        width={500}
-        height={500}
+        width={380}
+        height={380}
+        className="object-contain"
+      />
+    </div>
+  );
+}
+
+function Paralax4() {
+  const { ref }: any = useParallax({ speed: 20 });
+
+  return (
+    <div ref={ref} className="paralax w-full">
+      <Image
+        src={ParalaxImg2}
+        alt="paralax"
+        width={180}
+        height={180}
+        className="object-contain"
+      />
+    </div>
+  );
+}
+
+function Paralax5() {
+  const { ref }: any = useParallax({ speed: 20 });
+
+  return (
+    <div ref={ref} className="paralax w-full">
+      <Image
+        src={ParalaxImg2}
+        alt="paralax"
+        width={120}
+        height={120}
         className="object-contain"
       />
     </div>
@@ -92,12 +124,20 @@ const VideoSection = () => {
               </p>
             </div>
 
-            <div className=" absolute right-0 z-[1]">
+            <div className=" absolute right-20 top-[40%] z-[1]">
               <Paralaxtwo />
             </div>
 
             <div className="z-0 absolute right-10 hidden lg:block">
               <Paralaxthree />
+            </div>
+
+            <div className="z-0 absolute right-0 -bottom-10 hidden lg:block">
+              <Paralax4 />
+            </div>
+
+            <div className="z-0 absolute right-[30%] bottom-5  hidden lg:block">
+              <Paralax5 />
             </div>
           </div>
         </div>
