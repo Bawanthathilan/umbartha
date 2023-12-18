@@ -96,10 +96,10 @@ const OurServicesSection = () => {
         </div>
       </div>
 
-      <div className="section-two bg-ourservice-gradient pt-[60px] pb-[0px] lg:pt-[60px] lg:pb-[120px] relative">
+      <div className="section-two bg-ourservice-gradient  relative">
         <div className="container mx-auto max-w-7xl ">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-0">
-            <div className="left flex flex-col gap-10 px-5 lg:px-0">
+            <div className="left flex flex-col gap-10 px-5 pt-[60px] pb-[0px] lg:pt-[60px] lg:pb-[120px] lg:px-0">
               <div className="sec1 text-black">
                 <h3 className=" text-5xl lg:text-[64px] font-bold">25+</h3>
                 <h4 className=" text-base lg:text-2xl font-bold">
@@ -126,7 +126,7 @@ const OurServicesSection = () => {
             <div className=" flex lg:absolute right-0 bottom-0">
               <Image
                 src={BgVector}
-                className="object-contain h-full lg:h-[550px] w-full"
+                className="object-contain h-full lg:h-[640px] w-full"
                 alt="bgvector"
               />
             </div>
@@ -146,7 +146,7 @@ const OurServicesSection = () => {
           </div>
         </div>
 
-        <div className=" grid grid-cols-5 w-full h-auto lg:h-[500px] justify-between">
+        <div className=" grid grid-cols-5 w-full h-auto lg:h-[520px] justify-between">
           <Image src={Img1} alt="img1" className="w-full h-full object-cover" />
           <Image src={Img2} alt="img1" className="w-full h-full object-cover" />
           <Image
