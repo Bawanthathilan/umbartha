@@ -51,7 +51,7 @@ const EventSection = () => {
         <Paralaxtwo />
       </div>
       <div className="container mx-auto max-w-7xl z-10">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col  gap-10">
           <EventCard
             img={Img1}
             title="Psychological Society: Individual Factors of Stress in the Workplace"
@@ -59,6 +59,7 @@ const EventSection = () => {
             date="November 20, 2024"
             platform="Online | Zoom"
           />
+          <hr className="bg-[E6E6E6]" />
           <EventCard
             img={Img1}
             title="Psychological Society: Individual Factors of Stress in the Workplace"
@@ -66,6 +67,7 @@ const EventSection = () => {
             date="November 20, 2024"
             platform="Online | Zoom"
           />
+          <hr className="bg-[E6E6E6]" />
           <EventCard
             img={Img1}
             title="Psychological Society: Individual Factors of Stress in the Workplace"
