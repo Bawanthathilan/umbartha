@@ -71,7 +71,7 @@ const Page = () => {
 
       <div className=" bg-bg-white-varient pb-14 pt-[44px] lg:pt-0 ">
         <div className="container mx-auto max-w-6xl px-5 lg:px-0 z-10 relative">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 lg:gap-8 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-[18px] gap-y-6  ">
             <div className="item">
               <CounsellorCard
                 img={Img1}
