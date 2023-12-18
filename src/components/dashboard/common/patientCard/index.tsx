@@ -19,14 +19,18 @@ const PatientCard = ({ img, name, designation, year }: PatientCardProps) => {
         className="rounded-full"
       />
 
-      <div className="rigth flex flex-col gap-0 ">
+      <div className="rigth flex flex-col gap-[5px] ">
         <h4 className=" text-base md:text-[20px] font-semibold text-green-theme group-hover:text-white">
           {name}
         </h4>
-        <p className=" text-sm font-medium">{designation}</p>
+        <p className=" text-sm font-medium text-[#AAA] group-hover:text-white">
+          {designation}
+        </p>
       </div>
 
-      <span className="text-sm font-medium">{year}yr</span>
+      <span className="text-sm font-medium text-[#B4B4B4] group-hover:text-white">
+        {year}yr
+      </span>
     </div>
   );
 };
