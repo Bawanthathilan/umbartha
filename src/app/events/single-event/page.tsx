@@ -63,10 +63,23 @@ function ParalaxOne() {
 const page = () => {
   return (
     <div>
-      <HeroSection
+      {/* <HeroSection
         subtitle="events"
         title="Psychological Society: Individual Factors of Stress in the Workplace"
-      />
+      /> */}
+      <div className=" h-auto pt-36  lg:pt-0 md:pt-36 md:h-auto lg:h-[400px] w-full bg-hero-gradient px-5 z-10 ">
+        <div
+          className={`container relative z-10 mx-auto max-w-6xl flex w-full h-full flex-col items-left lg:justify-center md:justify-end justify-end gap-4 lg:items-center`}
+        >
+          <h4 className=" uppercase text-xl mt-32 font-bold text-[#014840]">
+            events
+          </h4>
+          <h1 className=" text-[40px] lg:text-[52px] font-bold text-black max-w-7xl text-left lg:text-center leading-[1.2] lg:leading-[1.2]">
+            Psychological Society: Individual <br className="hidden md:block" />{" "}
+            Factors of Stress in the Workplace
+          </h1>
+        </div>
+      </div>
       <div className=" absolute right-0 top-[30%] lg:top-[40%] z-[1]">
         <ParalaxOne />
       </div>
