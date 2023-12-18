@@ -35,7 +35,7 @@ const page = () => {
           <h1 className=" text-[40px] lg:text-[52px] font-bold text-black max-w-2xl text-left lg:text-center leading-[1.2] lg:leading-[1.2]">
             Individual Session
           </h1>
-          <p className=" text-[20px] font-normal text-left lg:text-center max-w-6xl">
+          <p className=" text-[20px] text-lef font-medium lg:text-center max-w-6xl">
             Find balance & well-being today!
           </p>
         </div>
