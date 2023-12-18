@@ -67,7 +67,7 @@ const AboutSection = () => {
 
           <div className="secton-2 my-10 ">
             <div className="container mx-auto max-w-7xl">
-              <div className="grid grid-cols-2 items-baseline gap-3 lg:gap-5">
+              <div className="grid grid-cols-[50%_50%] lg:grid-cols-[40%_60%] items-baseline gap-3 lg:gap-5">
                 <div className="itemOne flex flex-col gap-10">
                   <div className="img relative h-[367px] lg:h-[587px] w-full">
                     <Image
@@ -78,7 +78,7 @@ const AboutSection = () => {
                     />
                   </div>
 
-                  <div className="details hidden md:flex flex-col gap-5 ">
+                  <div className="details hidden md:flex flex-col gap-5">
                     <h4 className=" text-xl lg:text-[28px] font-semibold">
                       Vision
                     </h4>
