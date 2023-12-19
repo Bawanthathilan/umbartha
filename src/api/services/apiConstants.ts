@@ -9,4 +9,5 @@ export default {
   PAYMENT: "public/meeting/payment",
   TESTMONIAL: "public/testmonial",
   SUBSCRIBE: "public/subscription/subscribe",
+  EVENT: "public/event",
 };

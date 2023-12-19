@@ -82,3 +82,11 @@ export const subscribeApi = async (data: any) => {
     return Promise.reject(error);
   }
 };
+
+export const getEvents = async () => {
+  try {
+    return Promise.resolve(await apiInstance.get(ApiConstants.EVENT));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

@@ -5,6 +5,8 @@ interface QueryDataState {
   testimonialsLoading: boolean;
   subscribeLoading: boolean;
   subscribeSuccess: boolean;
+  eventsList: any;
+  eventsLoading: boolean;
 }
 
 const initialState: QueryDataState = {
@@ -12,6 +14,8 @@ const initialState: QueryDataState = {
   testimonialsLoading: false,
   subscribeLoading: false,
   subscribeSuccess: false,
+  eventsList: [],
+  eventsLoading: false,
 };
 
 const homeDataSlice = createSlice({
@@ -46,6 +50,17 @@ const homeDataSlice = createSlice({
       state.subscribeLoading = false;
       state.subscribeSuccess = false;
     },
+    // get events
+    getEventsRequest: (state) => {
+      state.eventsLoading = true;
+    },
+    getEventsSuccess: (state, action: PayloadAction<any>) => {
+      state.eventsLoading = false;
+      state.eventsList = action.payload;
+    },
+    getEventsFailure: (state, action: PayloadAction<any>) => {
+      state.eventsLoading = false;
+    },
   },
 });
 
@@ -57,6 +72,9 @@ export const {
   subscribeSuccess,
   subscribeFailure,
   resetSubscribe,
+  getEventsRequest,
+  getEventsSuccess,
+  getEventsFailure,
 } = homeDataSlice.actions;
 
 export default homeDataSlice.reducer;

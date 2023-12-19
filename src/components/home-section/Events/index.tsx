@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import EventCard from "../EventCard";
 
 import Img1 from "@/assets/home/events/1.png";
@@ -15,7 +15,19 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import { getEventsRequest } from "@/app/reducer/index";
+
 const Events = () => {
+  const dispatch = useAppDispatch();
+
+  const events = useAppSelector((state) => state.home.eventsList);
+
+  // get events
+  useEffect(() => {
+    dispatch(getEventsRequest());
+  }, []);
+
   return (
     <div className=" bg-white py-[69px]">
       <div className="container max-w-7xl mx-auto">
@@ -48,7 +60,25 @@ const Events = () => {
           modules={[Pagination]}
           className="eventSwiper mt-[18px]"
         >
-          <SwiperSlide>
+          {events &&
+            events.length > 0 &&
+            events.map((item: any, i: number) => (
+              <SwiperSlide key={i}>
+                <EventCard
+                  img={item.gallery[0]?.url}
+                  tag="Health Awareness"
+                  title={item.title}
+                  date={item.dates[0]?.dateFrom}
+                  time={
+                    item.timings[0]?.from.split(" ")[1] +
+                    " " +
+                    item.timings[0]?.from.split(" ")[2]
+                  }
+                  link={"#"}
+                />
+              </SwiperSlide>
+            ))}
+          {/* <SwiperSlide>
             <EventCard
               img={Img1}
               tag="Health Awareness"
@@ -57,40 +87,7 @@ const Events = () => {
               time="12:30 pm - 2:30pm"
               link="#"
             />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <EventCard
-              img={Img2}
-              tag="Health Awareness"
-              title="Memory loss can be managed Health Awareness Program"
-              date="November 20, 2024"
-              time="12:30 pm - 2:30pm"
-              link="#"
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <EventCard
-              img={Img3}
-              tag="Health Awareness"
-              title="Memory loss can be managed Health Awareness Program"
-              date="November 20, 2024"
-              time="12:30 pm - 2:30pm"
-              link="#"
-            />
-          </SwiperSlide>
-
-          <SwiperSlide>
-            <EventCard
-              img={Img4}
-              tag="Health Awareness"
-              title="Memory loss can be managed Health Awareness Program"
-              date="November 20, 2024"
-              time="12:30 pm - 2:30pm"
-              link="#"
-            />
-          </SwiperSlide>
+          </SwiperSlide> */}
         </Swiper>
       </div>
     </div>
