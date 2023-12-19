@@ -5,6 +5,7 @@ import {
   sendOtpRequest,
   verifyOtpRequest,
   clientCreateRequest,
+  createBookingRequest,
 } from "../reducer";
 
 import {
@@ -13,6 +14,7 @@ import {
   handleSendOtp,
   handleOtpVerify,
   handleClientCreate,
+  handleCreateBooking,
 } from "./dashboardSaga";
 
 export default function* dashboardSaga() {
@@ -24,4 +26,5 @@ export default function* dashboardSaga() {
   yield takeLatest(sendOtpRequest.type, handleSendOtp);
   yield takeLatest(verifyOtpRequest.type, handleOtpVerify);
   yield takeLatest(clientCreateRequest.type, handleClientCreate);
+  yield takeLatest(createBookingRequest.type, handleCreateBooking);
 }

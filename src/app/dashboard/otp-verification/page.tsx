@@ -63,6 +63,13 @@ const Page = () => {
 
         <div className="flex flex-row items-end justify-end">
           <div className="flex flex-row gap-5 font-semibold text-base">
+            <button
+              onClick={() => {
+                router.push("/dashboard/otp-verification/verify");
+              }}
+            >
+              TEST
+            </button>
             <button onClick={back}>Back</button>
             <button
               disabled={phoneNumber.length < 12}

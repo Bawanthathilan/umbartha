@@ -114,6 +114,13 @@ const Page = () => {
 
         <div className="flex flex-row items-end justify-end">
           <div className="flex flex-row gap-5 font-semibold text-base">
+            <button
+              onClick={() => {
+                router.push("/dashboard/otp-verification/details");
+              }}
+            >
+              TEST
+            </button>
             <button>Back</button>
             <button
               disabled={getOTP().length < 4}

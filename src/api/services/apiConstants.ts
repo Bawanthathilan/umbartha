@@ -5,4 +5,6 @@ export default {
   OTP: "otp/send",
   OTP_VERIFY: "otp/verify",
   CLIENT: "public/client",
+  BOOKING: "public/meeting/booking",
+  PAYMENT: "public/meeting/payment",
 };

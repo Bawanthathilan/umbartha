@@ -18,6 +18,12 @@ interface LayoutDataState {
   clientCreateSuccess?: boolean;
   createdClientData?: any;
   clientCreateError?: any;
+  createBookingSuccess?: boolean;
+  createdBookingData?: any;
+  createBookingError?: any;
+  createPaymentSuccess?: boolean;
+  createdPaymentData?: any;
+  createPaymentError?: any;
 }
 
 const initialState: LayoutDataState = {
@@ -37,6 +43,12 @@ const initialState: LayoutDataState = {
   clientCreateSuccess: false,
   createdClientData: null,
   clientCreateError: null,
+  createBookingSuccess: false,
+  createdBookingData: null,
+  createBookingError: null,
+  createPaymentSuccess: false,
+  createdPaymentData: null,
+  createPaymentError: null,
 };
 
 const dashboardSlice = createSlice({
@@ -146,6 +158,36 @@ const dashboardSlice = createSlice({
       state.clientCreateSuccess = false;
       state.createdClientData = null;
     },
+    // create booking
+    createBookingRequest: (state, action: PayloadAction<any>) => {
+      state.loading = true;
+      state.createBookingError = null;
+      state.createBookingSuccess = false;
+      state.createdBookingData = null;
+    },
+    createBookingSuccess: (state, action: PayloadAction<any>) => {
+      state.loading = false;
+      state.createBookingSuccess = true;
+      state.createdBookingData = action.payload;
+    },
+    createBookingFailure: (state) => {
+      state.loading = false;
+      state.createBookingError = true;
+      state.createBookingSuccess = false;
+      state.createdBookingData = null;
+    },
+    // create payment
+    createPaymentSuccess: (state, action: PayloadAction<any>) => {
+      state.loading = false;
+      state.createPaymentSuccess = true;
+      state.createdPaymentData = action.payload;
+    },
+    createPaymentFailure: (state) => {
+      state.loading = false;
+      state.createPaymentError = true;
+      state.createPaymentSuccess = false;
+      state.createdPaymentData = null;
+    },
   },
 });
 
@@ -168,6 +210,11 @@ export const {
   clientCreateRequest,
   clientCreateSuccess,
   clientCreateFailure,
+  createBookingRequest,
+  createBookingSuccess,
+  createBookingFailure,
+  createPaymentSuccess,
+  createPaymentFailure,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

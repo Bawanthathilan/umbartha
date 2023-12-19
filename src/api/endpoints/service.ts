@@ -46,3 +46,19 @@ export const clientCreate = async (data: string) => {
     return Promise.reject(error);
   }
 };
+
+export const createBookingApi = async (data: any) => {
+  try {
+    return Promise.resolve(await apiInstance.post(ApiConstants.BOOKING, data));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const createPaymentAPi = async (data: any) => {
+  try {
+    return Promise.resolve(await apiInstance.post(ApiConstants.PAYMENT, data));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

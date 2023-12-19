@@ -7,6 +7,8 @@ import {
   sendOtp,
   verifyOtp,
   clientCreate,
+  createBookingApi,
+  createPaymentAPi,
 } from "../../../api/endpoints/service";
 import {
   getCounsellorListSuccess,
@@ -19,6 +21,8 @@ import {
   verifyOtpFailure,
   clientCreateSuccess,
   clientCreateFailure,
+  createBookingSuccess,
+  createBookingFailure,
 } from "../reducer";
 
 export function* handleGetCounsellorData(
@@ -96,5 +100,28 @@ export function* handleClientCreate(
     yield put(clientCreateSuccess(data));
   } catch (error: any) {
     yield put(clientCreateFailure(error.message));
+  }
+}
+
+export function* handleCreateBooking(
+  action: PayloadAction<{ createBooking: any; createPayment: any }>
+): Generator<CallEffect | PutEffect, void, unknown> {
+  try {
+    const { createBooking, createPayment } = action.payload;
+    console.log("action.payload------", action.payload);
+    console.log("action.payload------", createBooking);
+    console.log("action.payload------", createPayment);
+    const bookingResponse: any = yield call(createBookingApi, createBooking);
+    const paymentResponse: any = yield call(createPaymentAPi, createPayment);
+
+    if (bookingResponse?.status !== 201) {
+      throw new Error("Something went wrong");
+    }
+    if (paymentResponse?.status !== 201) {
+      throw new Error("Something went wrong");
+    }
+    yield put(createBookingSuccess(bookingResponse?.data));
+  } catch (error: any) {
+    yield put(createBookingFailure(error.message));
   }
 }
