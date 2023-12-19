@@ -1,52 +1,53 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface LayoutDataState {
-  data: any;
-  loading: boolean;
-  error: string | null;
-  fieldData: any;
-
   stepCount: number;
+  counsellorList: any;
+  counsellorListLoading?: boolean;
+  counsellorListError?: any;
 }
 
 const initialState: LayoutDataState = {
-  data: null,
-  loading: false,
-  error: null,
-  fieldData: null,
   stepCount: 0,
+  counsellorList: [],
+  counsellorListLoading: false,
+  counsellorListError: null,
 };
 
 const dashboardSlice = createSlice({
   name: "dashboardData",
   initialState,
   reducers: {
-    // submit new field
-    testRequest: (state, action: PayloadAction<any>) => {
-      state.loading = true;
-      state.error = null;
-    },
-    testSuccess: (state, action: PayloadAction<any>) => {
-      state.loading = false;
-      state.data = action.payload;
-    },
-    testFailure: (state, action: PayloadAction<any>) => {
-      state.loading = false;
-      state.error = action.payload;
-    },
-
     // stepper
     stepCountIncrease: (state, action: PayloadAction<any>) => {
-      console.log("sdsd", action.payload)
       state.stepCount = action.payload;
     },
 
     stepCountDecrease: (state, action: PayloadAction<any>) => {
       state.stepCount = action.payload;
-    }
+    },
+    // get counsellor list
+    getCounsellorListRequest: (state) => {
+      state.counsellorListLoading = true;
+      state.counsellorListError = null;
+    },
+    getCounsellorListSuccess: (state, action: PayloadAction<any>) => {
+      state.counsellorListLoading = false;
+      state.counsellorList = action.payload;
+    },
+    getCounsellorListFailure: (state, action: PayloadAction<any>) => {
+      state.counsellorListLoading = false;
+      state.counsellorListError = action.payload;
+    },
   },
 });
 
-export const { testRequest, testSuccess, testFailure, stepCountDecrease, stepCountIncrease } = dashboardSlice.actions;
+export const {
+  stepCountDecrease,
+  stepCountIncrease,
+  getCounsellorListRequest,
+  getCounsellorListSuccess,
+  getCounsellorListFailure,
+} = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

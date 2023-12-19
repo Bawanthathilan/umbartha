@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import PatientCard from "@/components/dashboard/common/patientCard";
 import Image from "next/image";
 import manisha from "@/assets/home/aboutus/people2.png";
@@ -7,13 +7,19 @@ import Calender from "@/components/dashboard/common/Calender";
 import DateChip from "@/components/dashboard/common/DateChip";
 import { useRouter } from "next/navigation";
 
-import { stepCountIncrease } from "@/app/dashboard/reducer/index";
+import {
+  stepCountIncrease,
+  getCounsellorListRequest,
+} from "@/app/dashboard/reducer/index";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 
 const Page = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
   const countNo = useAppSelector((state) => state.dashboard.stepCount);
+  const counsellorList = useAppSelector(
+    (state) => state.dashboard.counsellorList
+  );
 
   const ProceedAction = () => {
     dispatch(stepCountIncrease(2));
@@ -21,6 +27,27 @@ const Page = () => {
       router.push("/dashboard/otp-verification");
     }
     return;
+  };
+
+  // get the counsellor list
+  useEffect(() => {
+    dispatch(getCounsellorListRequest());
+  }, []);
+
+  // return years of experience
+  const getYear = (staredOnDate: string) => {
+    const startDate = new Date(staredOnDate);
+    const endDate = new Date();
+
+    let years = endDate.getFullYear() - startDate.getFullYear();
+    const monthDifference = endDate.getMonth() - startDate.getMonth();
+    if (
+      monthDifference < 0 ||
+      (monthDifference === 0 && endDate.getDate() < startDate.getDate())
+    ) {
+      years--;
+    }
+    return years;
   };
 
   return (
@@ -44,36 +71,18 @@ const Page = () => {
               className="w-full rounded-[40px] py-3 px-4 border-2 border-[#ECECEC;]"
             />
           </div>
-          <PatientCard
-            img={manisha}
-            name="Manisha Billimoria"
-            designation="Counsellor & Therapist"
-            year={5}
-          />
-          <PatientCard
-            img={manisha}
-            name="Manisha Billimoria"
-            designation="Counsellor & Therapist"
-            year={5}
-          />
-          <PatientCard
-            img={manisha}
-            name="Manisha Billimoria"
-            designation="Counsellor & Therapist"
-            year={5}
-          />
-          <PatientCard
-            img={manisha}
-            name="Manisha Billimoria"
-            designation="Counsellor & Therapist"
-            year={5}
-          />
-          <PatientCard
-            img={manisha}
-            name="Manisha Billimoria"
-            designation="Counsellor & Therapist"
-            year={5}
-          />
+          {counsellorList.map((item: any, index: number) => (
+            <PatientCard
+              key={index}
+              img={item.profilePictureURL}
+              name={item.displayName}
+              designation={item.specialization.join(" & ")}
+              year={getYear(item.practiceStartedOn)}
+              onClick={() => {
+                console.log("Sssss", item._id);
+              }}
+            />
+          ))}
         </div>
 
         <div className="right w-full flex flex-col gap-10">

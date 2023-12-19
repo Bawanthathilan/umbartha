@@ -6,11 +6,21 @@ interface PatientCardProps {
   name: string;
   designation: string;
   year: number;
+  onClick?: () => void;
 }
 
-const PatientCard = ({ img, name, designation, year }: PatientCardProps) => {
+const PatientCard = ({
+  img,
+  name,
+  designation,
+  year,
+  onClick,
+}: PatientCardProps) => {
   return (
-    <div className="flex group flex-row py-3 gap-5 items-center justify-start px-4 border-2 border-[#ECECEC;] rounded-xl hover:bg-green-theme cursor-pointer text-black hover:text-white">
+    <div
+      onClick={onClick}
+      className="flex group flex-row py-3 gap-5 items-center justify-start px-4 border-2 border-[#ECECEC;] rounded-xl hover:bg-green-theme cursor-pointer text-black hover:text-white"
+    >
       <Image
         src={img}
         alt="manisha"

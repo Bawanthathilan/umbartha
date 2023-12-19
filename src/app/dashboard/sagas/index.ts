@@ -1,8 +1,8 @@
 import { takeLatest } from "redux-saga/effects";
-import { testRequest } from "../reducer";
+import { getCounsellorListRequest } from "../reducer";
 
-import { handleGetTestData } from "./dashboardSaga";
+import { handleGetCounsellorData } from "./dashboardSaga";
 
 export default function* dashboardSaga() {
-  yield takeLatest(testRequest.type, handleGetTestData);
+  yield takeLatest(getCounsellorListRequest.type, handleGetCounsellorData);
 }

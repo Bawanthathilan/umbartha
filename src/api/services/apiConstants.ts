@@ -1,4 +1,4 @@
 export default {
-  BASE_URL: "https://dummyjson.com/",
-  USERS: "users/",
+  BASE_URL: "https://api-qa.umbartha.org:443/",
+  COUNSELLOR: "public/counsellor",
 };
