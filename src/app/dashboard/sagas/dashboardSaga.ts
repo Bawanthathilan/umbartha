@@ -5,6 +5,8 @@ import {
   getCounsellorData,
   getMeetingDataByCounsellorId,
   sendOtp,
+  verifyOtp,
+  clientCreate,
 } from "../../../api/endpoints/service";
 import {
   getCounsellorListSuccess,
@@ -13,6 +15,10 @@ import {
   getMeetingDataByCounsellorIdFailure,
   sendOtpSuccess,
   sendOtpFailure,
+  verifyOtpSuccess,
+  verifyOtpFailure,
+  clientCreateSuccess,
+  clientCreateFailure,
 } from "../reducer";
 
 export function* handleGetCounsellorData(
@@ -54,11 +60,41 @@ export function* handleSendOtp(
   try {
     const response: any = yield call(sendOtp, action.payload);
     const { status, data } = response;
-    if (status !== 200) {
+    if (status !== 201) {
       throw new Error("Something went wrong");
     }
     yield put(sendOtpSuccess(data));
   } catch (error: any) {
     yield put(sendOtpFailure(error.message));
+  }
+}
+
+export function* handleOtpVerify(
+  action: PayloadAction<string>
+): Generator<CallEffect | PutEffect, void, unknown> {
+  try {
+    const response: any = yield call(verifyOtp, action.payload);
+    const { status, data } = response;
+    if (status !== 201) {
+      throw new Error("Something went wrong");
+    }
+    yield put(verifyOtpSuccess(data));
+  } catch (error: any) {
+    yield put(verifyOtpFailure(error.message));
+  }
+}
+
+export function* handleClientCreate(
+  action: PayloadAction<string>
+): Generator<CallEffect | PutEffect, void, unknown> {
+  try {
+    const response: any = yield call(clientCreate, action.payload);
+    const { status, data } = response;
+    if (status !== 201) {
+      throw new Error("Something went wrong");
+    }
+    yield put(clientCreateSuccess(data));
+  } catch (error: any) {
+    yield put(clientCreateFailure(error.message));
   }
 }

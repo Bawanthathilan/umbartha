@@ -28,3 +28,21 @@ export const sendOtp = async (phoneNumber: string) => {
     return Promise.reject(error);
   }
 };
+
+export const verifyOtp = async (data: string) => {
+  try {
+    return Promise.resolve(
+      await apiInstance.post(ApiConstants.OTP_VERIFY, data)
+    );
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
+
+export const clientCreate = async (data: string) => {
+  try {
+    return Promise.resolve(await apiInstance.post(ApiConstants.CLIENT, data));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

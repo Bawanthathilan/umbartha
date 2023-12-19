@@ -13,6 +13,11 @@ interface LayoutDataState {
   otpSentSuccess?: boolean;
   otpResponse?: any;
   otpSentError?: any;
+  otpVerified?: boolean;
+  otpVerifiedError?: any;
+  clientCreateSuccess?: boolean;
+  createdClientData?: any;
+  clientCreateError?: any;
 }
 
 const initialState: LayoutDataState = {
@@ -27,6 +32,11 @@ const initialState: LayoutDataState = {
   otpSentSuccess: false,
   otpResponse: null,
   otpSentError: null,
+  otpVerified: false,
+  otpVerifiedError: null,
+  clientCreateSuccess: false,
+  createdClientData: null,
+  clientCreateError: null,
 };
 
 const dashboardSlice = createSlice({
@@ -106,6 +116,36 @@ const dashboardSlice = createSlice({
       state.otpSentSuccess = false;
       state.otpResponse = null;
     },
+    // verify otp
+    verifyOtpRequest: (state, action: PayloadAction<any>) => {
+      state.otpVerified = false;
+      state.otpVerifiedError = null;
+    },
+    verifyOtpSuccess: (state, action: PayloadAction<any>) => {
+      state.otpVerified = true;
+    },
+    verifyOtpFailure: (state) => {
+      state.otpVerified = false;
+      state.otpVerifiedError = true;
+    },
+    // client create
+    clientCreateRequest: (state, action: PayloadAction<any>) => {
+      state.loading = true;
+      state.clientCreateError = null;
+      state.clientCreateSuccess = false;
+      state.createdClientData = null;
+    },
+    clientCreateSuccess: (state, action: PayloadAction<any>) => {
+      state.loading = false;
+      state.clientCreateSuccess = true;
+      state.createdClientData = action.payload;
+    },
+    clientCreateFailure: (state) => {
+      state.loading = false;
+      state.clientCreateError = true;
+      state.clientCreateSuccess = false;
+      state.createdClientData = null;
+    },
   },
 });
 
@@ -122,6 +162,12 @@ export const {
   sendOtpRequest,
   sendOtpSuccess,
   sendOtpFailure,
+  verifyOtpRequest,
+  verifyOtpSuccess,
+  verifyOtpFailure,
+  clientCreateRequest,
+  clientCreateSuccess,
+  clientCreateFailure,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

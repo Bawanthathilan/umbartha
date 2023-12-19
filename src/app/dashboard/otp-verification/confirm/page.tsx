@@ -80,6 +80,14 @@ const Page = () => {
             </div>
           </div>
         </div>
+        <div className="flex flex-row items-end justify-end">
+          <div className="flex flex-row gap-5 font-semibold text-base">
+            <button>Back</button>
+            <button className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white disabled:bg-[#ECECEC] disabled:text-[#666]">
+              Proceed
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

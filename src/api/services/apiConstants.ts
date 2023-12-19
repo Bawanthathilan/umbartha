@@ -3,4 +3,6 @@ export default {
   COUNSELLOR: "public/counsellor",
   MEETING: "public/meeting/counsellor",
   OTP: "otp/send",
+  OTP_VERIFY: "otp/verify",
+  CLIENT: "public/client",
 };
