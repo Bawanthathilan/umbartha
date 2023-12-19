@@ -8,3 +8,13 @@ export const getCounsellorData = async () => {
     return Promise.reject(error);
   }
 };
+
+export const getMeetingDataByCounsellorId = async (id: string) => {
+  try {
+    return Promise.resolve(
+      await apiInstance.get(`${ApiConstants.MEETING}/${id}`)
+    );
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

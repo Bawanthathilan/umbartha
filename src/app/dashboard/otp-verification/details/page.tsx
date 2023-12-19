@@ -1,6 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-const page = () => {
+import { useAppDispatch } from "@/hooks/reduxHooks";
+import { stepCountIncrease } from "@/app/dashboard/reducer/index";
+
+const Page = () => {
+  const router = useRouter();
+
+  const dispatch = useAppDispatch();
+
+  // set active step
+  useEffect(() => {
+    dispatch(stepCountIncrease(3));
+  }, []);
+
   return (
     <div className="flex flex-col gap-5">
       <div className="title">
@@ -42,7 +56,13 @@ const page = () => {
         <div className="flex flex-row items-end justify-end">
           <div className="flex flex-row gap-5 font-semibold text-base">
             <button>Back</button>
-            <button className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white">
+            <button
+              onClick={() => {
+                dispatch(stepCountIncrease(4));
+                router.push("/dashboard/otp-verification/confirm");
+              }}
+              className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white"
+            >
               Confirm Details
             </button>
           </div>
@@ -52,4 +72,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

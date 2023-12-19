@@ -1,7 +1,20 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { CiCamera } from "react-icons/ci";
 
-const page = () => {
+import { useAppDispatch } from "@/hooks/reduxHooks";
+import { stepCountIncrease } from "@/app/dashboard/reducer/index";
+
+const Page = () => {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
+  // set active step
+  useEffect(() => {
+    dispatch(stepCountIncrease(4));
+  }, []);
+
   return (
     <div className="flex flex-col gap-5">
       <div className="title">
@@ -72,4 +85,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { stepCountIncrease } from "@/app/dashboard/reducer/index";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
@@ -11,10 +11,7 @@ const Page = () => {
 
   const getOtp = () => {
     dispatch(stepCountIncrease(3));
-    if (countNo === 3) {
-      router.push("/dashboard/otp-verification/verify");
-    }
-    return;
+    router.push("/dashboard/otp-verification/verify");
   };
 
   const back = () => {
@@ -24,6 +21,11 @@ const Page = () => {
     }
     return;
   };
+
+  // set active step
+  useEffect(() => {
+    dispatch(stepCountIncrease(3));
+  }, []);
 
   return (
     <div className="flex flex-col gap-5">
