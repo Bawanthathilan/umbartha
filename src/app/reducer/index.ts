@@ -7,6 +7,8 @@ interface QueryDataState {
   subscribeSuccess: boolean;
   eventsList: any;
   eventsLoading: boolean;
+  contactUsLoading?: boolean;
+  contactUsSuccess?: boolean;
 }
 
 const initialState: QueryDataState = {
@@ -16,6 +18,8 @@ const initialState: QueryDataState = {
   subscribeSuccess: false,
   eventsList: [],
   eventsLoading: false,
+  contactUsLoading: false,
+  contactUsSuccess: false,
 };
 
 const homeDataSlice = createSlice({
@@ -61,6 +65,23 @@ const homeDataSlice = createSlice({
     getEventsFailure: (state, action: PayloadAction<any>) => {
       state.eventsLoading = false;
     },
+    // contact us
+    contactUsRequest: (state, action: PayloadAction<any>) => {
+      state.contactUsLoading = true;
+      state.contactUsSuccess = false;
+    },
+    contactUsSuccess: (state, action: PayloadAction<any>) => {
+      state.contactUsLoading = false;
+      state.contactUsSuccess = true;
+    },
+    contactUsFailure: (state, action: PayloadAction<any>) => {
+      state.contactUsLoading = false;
+      state.contactUsSuccess = false;
+    },
+    resetContactUs: (state) => {
+      state.contactUsLoading = false;
+      state.contactUsSuccess = false;
+    },
   },
 });
 
@@ -75,6 +96,10 @@ export const {
   getEventsRequest,
   getEventsSuccess,
   getEventsFailure,
+  contactUsRequest,
+  contactUsSuccess,
+  contactUsFailure,
+  resetContactUs,
 } = homeDataSlice.actions;
 
 export default homeDataSlice.reducer;

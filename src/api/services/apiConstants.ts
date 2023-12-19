@@ -10,4 +10,5 @@ export default {
   TESTMONIAL: "public/testmonial",
   SUBSCRIBE: "public/subscription/subscribe",
   EVENT: "public/event",
+  CONTACT_US: "public/contact/request",
 };

@@ -5,6 +5,7 @@ import {
   getTestimonials,
   subscribeApi,
   getEvents,
+  contactUsApi,
 } from "../../api/endpoints/service";
 import {
   getTestimonialsSuccess,
@@ -13,6 +14,8 @@ import {
   subscribeFailure,
   getEventsSuccess,
   getEventsFailure,
+  contactUsSuccess,
+  contactUsFailure,
 } from "../reducer";
 
 export function* handleGetTestimonials(
@@ -58,5 +61,21 @@ export function* handleGetEvents(
     yield put(getEventsSuccess(data));
   } catch (error: any) {
     yield put(getEventsFailure(error.message));
+  }
+}
+
+export function* handleContactUs(
+  action: PayloadAction<string>
+): Generator<CallEffect | PutEffect, void, unknown> {
+  try {
+    const response: any = yield call(contactUsApi, action.payload);
+    console.log(response);
+    const { status, data } = response;
+    if (status !== 201) {
+      throw new Error("Something went wrong");
+    }
+    yield put(contactUsSuccess(data));
+  } catch (error: any) {
+    yield put(contactUsFailure(error.message));
   }
 }

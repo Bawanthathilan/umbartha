@@ -124,7 +124,7 @@ const Page = () => {
           className="w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]"
         />
         {emailValidation && (
-          <p className="text-[#ff0000]  ml-3 text-sm font-semibold">
+          <p className="text-[#b00707]  ml-3 text-sm font-semibold">
             Invalid email
           </p>
         )}
@@ -139,7 +139,7 @@ const Page = () => {
           className="w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]"
         />
         {phoneValidation && (
-          <p className="text-[#ff0000]  ml-3 text-sm font-semibold">
+          <p className="text-[#b00707]  ml-3 text-sm font-semibold">
             Invalid phone number
           </p>
         )}

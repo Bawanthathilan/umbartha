@@ -90,3 +90,13 @@ export const getEvents = async () => {
     return Promise.reject(error);
   }
 };
+
+export const contactUsApi = async (data: any) => {
+  try {
+    return Promise.resolve(
+      await apiInstance.post(ApiConstants.CONTACT_US, data)
+    );
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
