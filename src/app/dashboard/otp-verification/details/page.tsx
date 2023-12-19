@@ -5,6 +5,10 @@ const page = () => {
     <div className="flex flex-col gap-5">
       <div className="title">
         <h3 className=" text-[28px] font-bold">Appointment Details</h3>
+
+        <h3 className=" text-[#666] text-base font-semibold mt-10 lg:mt-[52px]">
+          ENTER DETAILS
+        </h3>
       </div>
 
       <div className="form flex flex-col gap-5">

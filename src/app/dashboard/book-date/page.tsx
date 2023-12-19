@@ -16,19 +16,21 @@ const page = () => {
           </h4>
         </div>
         <div className=" flex flex-col md:flex-row gap-5">
-          <div className="flex w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
+          <div className="flex group w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
             <div className="flex">
               <div className="cont">
                 <h4 className=" text-lg font-semibold">Online Meeting</h4>
-                <p className=" text-[10px] font-medium">Via Zoom</p>
+                <p className=" text-[10px] font-medium text-[#AAA] group-hover:text-[#26AF9F]">
+                  Via Zoom
+                </p>
               </div>
             </div>
           </div>
-          <div className="flex w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
+          <div className="flex group w-full cursor-pointer flex-row gap-5 px-7 py-7 border-2 border-[#ECECEC] hover:border-[#26AF9F] rounded-xl bg-white hover:bg-[#F0FFFD] text-black hover:text-green-theme ">
             <div className="flex">
               <div className="cont">
                 <h4 className=" text-lg font-semibold">Physical Meeting</h4>
-                <p className=" text-[10px] font-medium">
+                <p className=" text-[10px] font-medium text-[#AAA] group-hover:text-[#26AF9F]">
                   Umbartha, No 37/1, Hotel Road, Mount Lavinia, Sri Lanka
                 </p>
               </div>

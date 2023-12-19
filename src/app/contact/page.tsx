@@ -49,7 +49,13 @@ function ParalaxOne() {
   );
 }
 
-const page = () => {
+const Page = () => {
+  const [expandedPanel, setExpandedPanel] = React.useState(null);
+
+  const handleChange = (panel: any) => (event: any, isExpanded: any) => {
+    setExpandedPanel(isExpanded ? panel : null);
+  };
+
   return (
     <div>
       <HeroSection
@@ -215,7 +221,15 @@ const page = () => {
             </div>
 
             <div className="items flex flex-col  mt-10">
-              <Accordion>
+              <Accordion
+                expanded={expandedPanel === "panel1"}
+                onChange={handleChange("panel1")}
+                sx={{
+                  backgroundColor: "transparent !important",
+                  paddingTop: "24px",
+                  paddingBottom: "24px",
+                }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -225,7 +239,16 @@ const page = () => {
                     How much do you charge for the file processing?
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{
+                    backgroundColor: "#F1E8DF",
+                    borderRadius: "12px",
+                    paddingLeft: "32px",
+                    paddingRight: "32px",
+                    paddingTop: "39px",
+                    paddingBottom: "39px",
+                  }}
+                >
                   <Typography>
                     We do not charge any kind of application or visa processing
                     fees for the universities and colleges under our portal. Our
@@ -233,7 +256,15 @@ const page = () => {
                   </Typography>
                 </AccordionDetails>
               </Accordion>
-              <Accordion>
+              <Accordion
+                expanded={expandedPanel === "panel2"}
+                onChange={handleChange("panel2")}
+                sx={{
+                  backgroundColor: "transparent !important",
+                  paddingTop: "24px",
+                  paddingBottom: "24px",
+                }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -244,7 +275,16 @@ const page = () => {
                     and Malaysia?
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{
+                    backgroundColor: "#F1E8DF",
+                    borderRadius: "12px",
+                    paddingLeft: "32px",
+                    paddingRight: "32px",
+                    paddingTop: "39px",
+                    paddingBottom: "39px",
+                  }}
+                >
                   <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Suspendisse malesuada lacus ex, sit amet blandit leo
@@ -253,7 +293,15 @@ const page = () => {
                 </AccordionDetails>
               </Accordion>
 
-              <Accordion>
+              <Accordion
+                expanded={expandedPanel === "panel3"}
+                onChange={handleChange("panel3")}
+                sx={{
+                  backgroundColor: "transparent !important",
+                  paddingTop: "24px",
+                  paddingBottom: "24px",
+                }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -264,7 +312,16 @@ const page = () => {
                     UK, and Malaysia with a study gap?
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{
+                    backgroundColor: "#F1E8DF",
+                    borderRadius: "12px",
+                    paddingLeft: "32px",
+                    paddingRight: "32px",
+                    paddingTop: "39px",
+                    paddingBottom: "39px",
+                  }}
+                >
                   <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Suspendisse malesuada lacus ex, sit amet blandit leo
@@ -273,7 +330,15 @@ const page = () => {
                 </AccordionDetails>
               </Accordion>
 
-              <Accordion>
+              <Accordion
+                expanded={expandedPanel === "panel4"}
+                onChange={handleChange("panel4")}
+                sx={{
+                  backgroundColor: "transparent !important",
+                  paddingTop: "24px",
+                  paddingBottom: "24px",
+                }}
+              >
                 <AccordionSummary
                   expandIcon={<ExpandMoreIcon />}
                   aria-controls="panel2a-content"
@@ -283,7 +348,16 @@ const page = () => {
                     What kind of migration services do you provide?
                   </Typography>
                 </AccordionSummary>
-                <AccordionDetails>
+                <AccordionDetails
+                  sx={{
+                    backgroundColor: "#F1E8DF",
+                    borderRadius: "12px",
+                    paddingLeft: "32px",
+                    paddingRight: "32px",
+                    paddingTop: "39px",
+                    paddingBottom: "39px",
+                  }}
+                >
                   <Typography>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Suspendisse malesuada lacus ex, sit amet blandit leo
@@ -299,4 +373,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
