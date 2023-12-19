@@ -62,3 +62,13 @@ export const createPaymentAPi = async (data: any) => {
     return Promise.reject(error);
   }
 };
+
+// home page api endpoints
+
+export const getTestimonials = async () => {
+  try {
+    return Promise.resolve(await apiInstance.get(ApiConstants.TESTMONIAL));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

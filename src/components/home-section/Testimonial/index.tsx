@@ -1,8 +1,11 @@
 "use client";
-import React from "react";
+import React, { use, useEffect } from "react";
 import "@/components/home-section/Testimonial/style.css";
 import Image from "next/image";
 import { Kaisei_Decol } from "next/font/google";
+
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import { getTestimonialsRequest } from "@/app/reducer/index";
 
 const KaiseiDecol = Kaisei_Decol({
   subsets: ["latin"],
@@ -56,6 +59,17 @@ function Paralax3() {
 }
 
 const Testimonial = () => {
+  const dispatch = useAppDispatch();
+
+  const testimonialsList = useAppSelector(
+    (state) => state.home.testimonialsList
+  );
+
+  // get testimonials
+  useEffect(() => {
+    dispatch(getTestimonialsRequest());
+  }, []);
+
   return (
     <div>
       <div className="slider-container-testimonial1">
@@ -89,48 +103,26 @@ const Testimonial = () => {
             modules={[Pagination]}
             className="testimonialSwiper mt-[18px]"
           >
-            <SwiperSlide>
-              <TestimonialCard
-                img={Image1}
-                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
-                name="Lois Whittaker"
-                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
-              />
-            </SwiperSlide>
+            {testimonialsList &&
+              testimonialsList.map((item: any, i: number) => (
+                <SwiperSlide key={i}>
+                  <TestimonialCard
+                    img={item.photo?.url}
+                    title={item.testimonial}
+                    name={item.name}
+                    desc={item.testimonial}
+                  />
+                </SwiperSlide>
+              ))}
 
-            <SwiperSlide>
+            {/* <SwiperSlide>
               <TestimonialCard
                 img={Image1}
                 title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
                 name="Lois Whittaker"
                 desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
               />
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <TestimonialCard
-                img={Image1}
-                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
-                name="Lois Whittaker"
-                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard
-                img={Image1}
-                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
-                name="Lois Whittaker"
-                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <TestimonialCard
-                img={Image1}
-                title="I was able to resolve the pain and the anger that I had towards the person who had hurt me.”"
-                name="Lois Whittaker"
-                desc="Sr Content Marketing and Comm Mgr Munich Re America Services, Inc."
-              />
-            </SwiperSlide>
+            </SwiperSlide> */}
           </Swiper>
         </div>
       </div>
