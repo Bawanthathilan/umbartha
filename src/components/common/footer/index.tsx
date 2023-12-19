@@ -1,11 +1,45 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { data } from "@/data/index";
 
 import TextField from "@mui/material/TextField";
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import { subscribeRequest, resetSubscribe } from "@/app/reducer/index";
 
 const Footer = () => {
+  const dispatch = useAppDispatch();
+
+  const [email, setEmail] = React.useState<string>("");
+  const [emailValidation, setEmailValidation] = React.useState<boolean>(false);
+
+  const subscribeSuccess = useAppSelector(
+    (state) => state.home.subscribeSuccess
+  );
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(email)) {
+      setEmailValidation(true);
+      return;
+    }
+    setEmailValidation(false);
+  };
+
+  const handleSubscribe = () => {
+    dispatch(subscribeRequest({ email }));
+  };
+
+  useEffect(() => {
+    if (subscribeSuccess) {
+      setTimeout(() => {
+        setEmail("");
+        dispatch(resetSubscribe());
+      }, 3000);
+    }
+  }, [subscribeSuccess]);
+
   return (
     <footer className="relative bg-[#082623] w-full py-10">
       <div className=" container mx-auto max-w-7xl px-5 lg:px-0">
@@ -64,11 +98,16 @@ const Footer = () => {
               to stay up to date.
             </h1>
 
-            <form className="flex flex-col gap-5  w-full justify-start">
+            <div className="flex flex-col gap-5  w-full justify-start">
               <TextField
                 id="standard-basic"
                 label="Enter your Email"
                 variant="standard"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  validateEmail(e.target.value);
+                }}
                 InputProps={{
                   style: {
                     borderColor: "red",
@@ -87,11 +126,25 @@ const Footer = () => {
                   },
                 }}
               />
+              {emailValidation && (
+                <p className="text-[#b00707] text-sm font-semibold">
+                  Invalid email
+                </p>
+              )}
+              {subscribeSuccess && (
+                <p className="text-[#26AF9F] text-sm font-semibold">
+                  Subscribed successfully!
+                </p>
+              )}
 
-              <button className="bg-white py-[14px] px-[35px] w-[200px] md:w-[150px] lg:w-[200px] text-[#082623] text-sm">
+              <button
+                disabled={email.length < 1 || emailValidation}
+                onClick={handleSubscribe}
+                className="bg-white py-[14px] px-[35px] w-[200px] md:w-[150px] lg:w-[200px] text-[#082623] text-sm disabled:bg-[#ECECEC] disabled:text-[#666] disabled:cursor-not-allowed"
+              >
                 SUBSCRIBE
               </button>
-            </form>
+            </div>
           </div>
         </div>
       </div>

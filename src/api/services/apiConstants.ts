@@ -7,5 +7,6 @@ export default {
   CLIENT: "public/client",
   BOOKING: "public/meeting/booking",
   PAYMENT: "public/meeting/payment",
-  TESTMONIAL: "/public/testmonial",
+  TESTMONIAL: "public/testmonial",
+  SUBSCRIBE: "public/subscription/subscribe",
 };

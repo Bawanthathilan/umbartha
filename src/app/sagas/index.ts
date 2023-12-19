@@ -1,8 +1,9 @@
 import { takeLatest } from "redux-saga/effects";
-import { getTestimonialsRequest } from "../reducer";
+import { getTestimonialsRequest, subscribeRequest } from "../reducer";
 
-import { handleGetTestimonials } from "./homeSaga";
+import { handleGetTestimonials, handleSubscribe } from "./homeSaga";
 
 export default function* homeSaga() {
   yield takeLatest(getTestimonialsRequest.type, handleGetTestimonials);
+  yield takeLatest(subscribeRequest.type, handleSubscribe);
 }

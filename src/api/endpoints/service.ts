@@ -72,3 +72,13 @@ export const getTestimonials = async () => {
     return Promise.reject(error);
   }
 };
+
+export const subscribeApi = async (data: any) => {
+  try {
+    return Promise.resolve(
+      await apiInstance.post(ApiConstants.SUBSCRIBE, data)
+    );
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
