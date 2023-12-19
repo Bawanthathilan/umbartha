@@ -9,6 +9,10 @@ interface LayoutDataState {
   selectedCounsellorProfileData?: any;
   selectedCounsellorMeetingData?: any;
   selectedCounsellorMeetingDataError?: any;
+  otpSentLoading?: boolean;
+  otpSentSuccess?: boolean;
+  otpResponse?: any;
+  otpSentError?: any;
 }
 
 const initialState: LayoutDataState = {
@@ -19,6 +23,10 @@ const initialState: LayoutDataState = {
   selectedCounsellorId: null,
   selectedCounsellorMeetingData: [],
   selectedCounsellorMeetingDataError: null,
+  otpSentLoading: false,
+  otpSentSuccess: false,
+  otpResponse: null,
+  otpSentError: null,
 };
 
 const dashboardSlice = createSlice({
@@ -80,6 +88,24 @@ const dashboardSlice = createSlice({
       state.selectedCounsellorMeetingDataError = action.payload;
       state.selectedCounsellorMeetingData = [];
     },
+    // send otp
+    sendOtpRequest: (state, action: PayloadAction<any>) => {
+      state.otpSentLoading = true;
+      state.otpSentError = null;
+      state.otpSentSuccess = false;
+      state.otpResponse = null;
+    },
+    sendOtpSuccess: (state, action: PayloadAction<any>) => {
+      state.otpSentLoading = false;
+      state.otpResponse = action.payload;
+      state.otpSentSuccess = true;
+    },
+    sendOtpFailure: (state) => {
+      state.otpSentLoading = false;
+      state.otpSentError = true;
+      state.otpSentSuccess = false;
+      state.otpResponse = null;
+    },
   },
 });
 
@@ -93,6 +119,9 @@ export const {
   getMeetingDataByCounsellorIdRequest,
   getMeetingDataByCounsellorIdSuccess,
   getMeetingDataByCounsellorIdFailure,
+  sendOtpRequest,
+  sendOtpSuccess,
+  sendOtpFailure,
 } = dashboardSlice.actions;
 
 export default dashboardSlice.reducer;

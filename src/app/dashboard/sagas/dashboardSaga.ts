@@ -4,12 +4,15 @@ import { PayloadAction } from "@reduxjs/toolkit";
 import {
   getCounsellorData,
   getMeetingDataByCounsellorId,
+  sendOtp,
 } from "../../../api/endpoints/service";
 import {
   getCounsellorListSuccess,
   getCounsellorListFailure,
   getMeetingDataByCounsellorIdSuccess,
   getMeetingDataByCounsellorIdFailure,
+  sendOtpSuccess,
+  sendOtpFailure,
 } from "../reducer";
 
 export function* handleGetCounsellorData(
@@ -42,5 +45,20 @@ export function* handleGetMeetingDataByCounsellorId(
     yield put(getMeetingDataByCounsellorIdSuccess(data));
   } catch (error: any) {
     yield put(getMeetingDataByCounsellorIdFailure(error.message));
+  }
+}
+
+export function* handleSendOtp(
+  action: PayloadAction<string>
+): Generator<CallEffect | PutEffect, void, unknown> {
+  try {
+    const response: any = yield call(sendOtp, action.payload);
+    const { status, data } = response;
+    if (status !== 200) {
+      throw new Error("Something went wrong");
+    }
+    yield put(sendOtpSuccess(data));
+  } catch (error: any) {
+    yield put(sendOtpFailure(error.message));
   }
 }

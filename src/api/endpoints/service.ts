@@ -18,3 +18,13 @@ export const getMeetingDataByCounsellorId = async (id: string) => {
     return Promise.reject(error);
   }
 };
+
+export const sendOtp = async (phoneNumber: string) => {
+  try {
+    return Promise.resolve(
+      await apiInstance.post(ApiConstants.OTP, phoneNumber)
+    );
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};
