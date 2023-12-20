@@ -18,7 +18,11 @@ import ParalaxImg from "@/assets/home/paralax/2.png";
 import ParalaxImg2 from "@/assets/home/paralax/3.png";
 
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
-import { contactUsRequest, resetContactUs } from "@/app/reducer/index";
+import {
+  contactUsRequest,
+  resetContactUs,
+  getFaqsRequest,
+} from "@/app/reducer/index";
 
 function Paralaxtwo() {
   const { ref }: any = useParallax({ speed: 40 });
@@ -63,6 +67,8 @@ const Page = () => {
   const [phoneValidation, setPhoneValidation] = React.useState<boolean>(false);
   const [message, setMessage] = React.useState("");
   const [userAgreement, setUserAgreement] = React.useState(false);
+
+  const faqData = useAppSelector((state) => state.home.faqData);
 
   const contactUsSuccess = useAppSelector(
     (state) => state.home.contactUsSuccess
@@ -115,6 +121,11 @@ const Page = () => {
       }, 3000);
     }
   }, [contactUsSuccess]);
+
+  // get faqs
+  useEffect(() => {
+    dispatch(getFaqsRequest());
+  }, []);
 
   return (
     <div>
@@ -333,7 +344,42 @@ const Page = () => {
             </div>
 
             <div className="items flex flex-col  mt-10">
-              <Accordion
+              {faqData &&
+                faqData.length > 0 &&
+                faqData.map((faq: any, i: number) => (
+                  <Accordion
+                    key={i}
+                    expanded={expandedPanel === `panel${i}`}
+                    onChange={handleChange(`panel${i}`)}
+                    sx={{
+                      backgroundColor: "transparent !important",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                    }}
+                  >
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls={`panel${i}a-content`}
+                      id={`panel${i}a-header`}
+                    >
+                      <Typography>{faq.title}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails
+                      sx={{
+                        backgroundColor: "#F1E8DF",
+                        borderRadius: "12px",
+                        paddingLeft: "32px",
+                        paddingRight: "32px",
+                        paddingTop: "39px",
+                        paddingBottom: "39px",
+                      }}
+                    >
+                      <Typography>{faq.description}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                ))}
+
+              {/* <Accordion
                 expanded={expandedPanel === "panel1"}
                 onChange={handleChange("panel1")}
                 sx={{
@@ -476,7 +522,7 @@ const Page = () => {
                     lobortis eget.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
           </div>
         </div>

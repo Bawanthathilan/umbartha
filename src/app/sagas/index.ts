@@ -4,6 +4,7 @@ import {
   subscribeRequest,
   getEventsRequest,
   contactUsRequest,
+  getFaqsRequest,
 } from "../reducer";
 
 import {
@@ -11,6 +12,7 @@ import {
   handleSubscribe,
   handleGetEvents,
   handleContactUs,
+  handleGetFaq,
 } from "./homeSaga";
 
 export default function* homeSaga() {
@@ -18,4 +20,5 @@ export default function* homeSaga() {
   yield takeLatest(subscribeRequest.type, handleSubscribe);
   yield takeLatest(getEventsRequest.type, handleGetEvents);
   yield takeLatest(contactUsRequest.type, handleContactUs);
+  yield takeLatest(getFaqsRequest.type, handleGetFaq);
 }

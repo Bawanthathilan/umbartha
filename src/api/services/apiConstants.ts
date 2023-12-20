@@ -11,4 +11,5 @@ export default {
   SUBSCRIBE: "public/subscription/subscribe",
   EVENT: "public/event",
   CONTACT_US: "public/contact/request",
+  FAQ: "public/faq",
 };

@@ -100,3 +100,11 @@ export const contactUsApi = async (data: any) => {
     return Promise.reject(error);
   }
 };
+
+export const getFaq = async () => {
+  try {
+    return Promise.resolve(await apiInstance.get(ApiConstants.FAQ));
+  } catch (error) {
+    return Promise.reject(error);
+  }
+};

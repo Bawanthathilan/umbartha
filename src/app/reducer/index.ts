@@ -9,6 +9,9 @@ interface QueryDataState {
   eventsLoading: boolean;
   contactUsLoading?: boolean;
   contactUsSuccess?: boolean;
+  faqLoading?: boolean;
+  faqData?: any;
+  faqError?: any;
 }
 
 const initialState: QueryDataState = {
@@ -20,6 +23,9 @@ const initialState: QueryDataState = {
   eventsLoading: false,
   contactUsLoading: false,
   contactUsSuccess: false,
+  faqLoading: false,
+  faqData: [],
+  faqError: null,
 };
 
 const homeDataSlice = createSlice({
@@ -82,6 +88,19 @@ const homeDataSlice = createSlice({
       state.contactUsLoading = false;
       state.contactUsSuccess = false;
     },
+    // faq
+    getFaqsRequest: (state) => {
+      state.faqLoading = true;
+      state.faqError = null;
+    },
+    getFaqsSuccess: (state, action: PayloadAction<any>) => {
+      state.faqLoading = false;
+      state.faqData = action.payload;
+    },
+    getFaqsFailure: (state, action: PayloadAction<any>) => {
+      state.faqLoading = false;
+      state.faqError = action.payload;
+    },
   },
 });
 
@@ -100,6 +119,9 @@ export const {
   contactUsSuccess,
   contactUsFailure,
   resetContactUs,
+  getFaqsRequest,
+  getFaqsSuccess,
+  getFaqsFailure,
 } = homeDataSlice.actions;
 
 export default homeDataSlice.reducer;

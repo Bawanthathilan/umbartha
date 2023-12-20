@@ -24,6 +24,8 @@ interface LayoutDataState {
   createPaymentSuccess?: boolean;
   createdPaymentData?: any;
   createPaymentError?: any;
+  faqData?: any;
+  faqError?: any;
 }
 
 const initialState: LayoutDataState = {
