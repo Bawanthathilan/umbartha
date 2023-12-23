@@ -2,9 +2,13 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+
+import { stepCountIncrease } from "@/app/dashboard/reducer/index";
 
 const SelectType = () => {
   const router = useRouter();
+  const dispatch = useAppDispatch();
 
   return (
     <div className="flex flex-col gap-10">
@@ -17,7 +21,10 @@ const SelectType = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         <div
           className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer"
-          onClick={() => router.push("/dashboard/counsellor")}
+          onClick={() => {
+            dispatch(stepCountIncrease(2));
+            router.push("/dashboard/counsellor");
+          }}
         >
           <div className="cont flex flex-col gap-10 justify-center items-center h-full ">
             <div className="title flex flex-col items-center justify-center w-full">
@@ -35,7 +42,10 @@ const SelectType = () => {
 
         <div
           className=" group hover:bg-[#F0FFFD] border-2 border-[#E3E3E3] rounded-xl py-10 hover:border-green-theme cursor-pointer"
-          onClick={() => router.push("/dashboard/book-date")}
+          onClick={() => {
+            dispatch(stepCountIncrease(2));
+            router.push("/dashboard/book-date");
+          }}
         >
           <div className="cont flex flex-col gap-10 justify-center items-center h-full ">
             <div className="title flex flex-col items-center justify-center w-full">

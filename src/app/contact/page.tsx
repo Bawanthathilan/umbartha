@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import HeroSection from "@/components/common/HeroSection";
 import { data } from "@/data/index";
 import Image from "next/image";
@@ -16,6 +16,13 @@ import { useParallax } from "react-scroll-parallax";
 
 import ParalaxImg from "@/assets/home/paralax/2.png";
 import ParalaxImg2 from "@/assets/home/paralax/3.png";
+
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import {
+  contactUsRequest,
+  resetContactUs,
+  getFaqsRequest,
+} from "@/app/reducer/index";
 
 function Paralaxtwo() {
   const { ref }: any = useParallax({ speed: 40 });
@@ -50,11 +57,75 @@ function ParalaxOne() {
 }
 
 const Page = () => {
+  const dispatch = useAppDispatch();
+
   const [expandedPanel, setExpandedPanel] = React.useState(null);
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [emailValidation, setEmailValidation] = React.useState<boolean>(false);
+  const [phone, setPhone] = React.useState("");
+  const [phoneValidation, setPhoneValidation] = React.useState<boolean>(false);
+  const [message, setMessage] = React.useState("");
+  const [userAgreement, setUserAgreement] = React.useState(false);
+
+  const faqData = useAppSelector((state) => state.home.faqData);
+
+  const contactUsSuccess = useAppSelector(
+    (state) => state.home.contactUsSuccess
+  );
 
   const handleChange = (panel: any) => (event: any, isExpanded: any) => {
     setExpandedPanel(isExpanded ? panel : null);
   };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /\S+@\S+\.\S+/;
+    if (!emailRegex.test(email)) {
+      setEmailValidation(true);
+      return;
+    }
+    setEmailValidation(false);
+  };
+
+  const validatePhoneNumber = (phone: string) => {
+    const phoneRegex = /^\+94\d{9}$/;
+    if (!phoneRegex.test(phone)) {
+      setPhoneValidation(true);
+      return;
+    }
+    setPhoneValidation(false);
+  };
+
+  // handle submit
+  const onSubmit = () => {
+    dispatch(
+      contactUsRequest({
+        name: name,
+        email: email,
+        phone: phone,
+        message: message,
+      })
+    );
+  };
+
+  useEffect(() => {
+    if (contactUsSuccess) {
+      setTimeout(() => {
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+        setUserAgreement(false);
+
+        dispatch(resetContactUs());
+      }, 3000);
+    }
+  }, [contactUsSuccess]);
+
+  // get faqs
+  useEffect(() => {
+    dispatch(getFaqsRequest());
+  }, []);
 
   return (
     <div>
@@ -79,13 +150,15 @@ const Page = () => {
                 <h1 className=" text-xl lg:text-4xl font-bold">Drop a Line</h1>
               </div>
 
-              <form action="" className="flex flex-col gap-5">
+              <div className="flex flex-col gap-5">
                 <input
                   className="px-5 py-3 rounded-3xl w-full border-[1.5] border-[#ECECEC] placeholder:text-black placeholder:text-sm"
                   type="text"
                   name=""
                   id=""
                   placeholder="Your Name"
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
                 />
 
                 <div className="flex flex-col lg:flex-row gap-5">
@@ -95,14 +168,40 @@ const Page = () => {
                     name=""
                     id=""
                     placeholder="Your Email"
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      validateEmail(e.target.value);
+                    }}
+                    value={email}
                   />
                   <input
                     className="px-5 py-3 rounded-3xl w-full border-[1.5] border-[#ECECEC] placeholder:text-black placeholder:text-sm"
                     type="text"
                     name=""
                     id=""
-                    placeholder="Your Contact Number "
+                    placeholder="+94 Contact Number "
+                    onChange={(e) => {
+                      setPhone(e.target.value);
+                      validatePhoneNumber(e.target.value);
+                    }}
+                    value={phone}
                   />
+                </div>
+                <div className="grid grid-cols-2">
+                  <div className="flex flex-col">
+                    {emailValidation && (
+                      <p className="text-[#b00707]  ml-3 text-sm font-semibold">
+                        Invalid email
+                      </p>
+                    )}
+                  </div>
+                  <div className="flex flex-col">
+                    {phoneValidation && (
+                      <p className="text-[#b00707]  ml-8 text-sm font-semibold">
+                        Invalid phone number
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <textarea
@@ -112,19 +211,43 @@ const Page = () => {
                   id=""
                   cols={30}
                   rows={10}
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
                 ></textarea>
                 <div className="text-[14px] font-normal flex flex-row gap-5">
-                  <input type="checkbox" name="" id="" />
+                  <input
+                    type="checkbox"
+                    name=""
+                    id=""
+                    checked={userAgreement}
+                    onChange={(e) => {
+                      setUserAgreement(e.target.checked);
+                    }}
+                  />
                   <p>
                     I agree that my submitted data is being collected and
                     stored.
                   </p>
                 </div>
-
-                <button className="bg-[#149F8E] py-2 text-white rounded-3xl">
+                {contactUsSuccess && (
+                  <p className="text-[#26AF9F] text-sm font-semibold">
+                    Message sent successfully!
+                  </p>
+                )}
+                <button
+                  disabled={
+                    name.length < 1 ||
+                    email.length < 1 ||
+                    phone.length < 1 ||
+                    emailValidation ||
+                    !userAgreement
+                  }
+                  onClick={onSubmit}
+                  className="bg-[#149F8E] py-2 text-white rounded-3xl disabled:bg-[#ECECEC] disabled:text-[#666]"
+                >
                   SUBMIT
                 </button>
-              </form>
+              </div>
             </div>
 
             <div className="right flex flex-col gap-10 lg:gap-5 mt-20 lg:mt-0 justify-between order-1 lg:order-2">
@@ -221,7 +344,42 @@ const Page = () => {
             </div>
 
             <div className="items flex flex-col  mt-10">
-              <Accordion
+              {faqData &&
+                faqData.length > 0 &&
+                faqData.map((faq: any, i: number) => (
+                  <Accordion
+                    key={i}
+                    expanded={expandedPanel === `panel${i}`}
+                    onChange={handleChange(`panel${i}`)}
+                    sx={{
+                      backgroundColor: "transparent !important",
+                      paddingTop: "24px",
+                      paddingBottom: "24px",
+                    }}
+                  >
+                    <AccordionSummary
+                      expandIcon={<ExpandMoreIcon />}
+                      aria-controls={`panel${i}a-content`}
+                      id={`panel${i}a-header`}
+                    >
+                      <Typography>{faq.title}</Typography>
+                    </AccordionSummary>
+                    <AccordionDetails
+                      sx={{
+                        backgroundColor: "#F1E8DF",
+                        borderRadius: "12px",
+                        paddingLeft: "32px",
+                        paddingRight: "32px",
+                        paddingTop: "39px",
+                        paddingBottom: "39px",
+                      }}
+                    >
+                      <Typography>{faq.description}</Typography>
+                    </AccordionDetails>
+                  </Accordion>
+                ))}
+
+              {/* <Accordion
                 expanded={expandedPanel === "panel1"}
                 onChange={handleChange("panel1")}
                 sx={{
@@ -364,7 +522,7 @@ const Page = () => {
                     lobortis eget.
                   </Typography>
                 </AccordionDetails>
-              </Accordion>
+              </Accordion> */}
             </div>
           </div>
         </div>

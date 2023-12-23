@@ -1,21 +1,22 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { stepCountIncrease } from "@/app/dashboard/reducer/index";
+import {
+  stepCountIncrease,
+  sendOtpRequest,
+} from "@/app/dashboard/reducer/index";
 import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
 
 const Page = () => {
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const countNo = useAppSelector((state) => state.dashboard.stepCount);
 
-  const getOtp = () => {
-    dispatch(stepCountIncrease(3));
-    if (countNo === 3) {
-      router.push("/dashboard/otp-verification/verify");
-    }
-    return;
-  };
+  const [phoneNumber, setPhoneNumber] = useState<any>("");
+
+  const countNo = useAppSelector((state) => state.dashboard.stepCount);
+  const otpSentSuccess = useAppSelector(
+    (state) => state.dashboard.otpSentSuccess
+  );
 
   const back = () => {
     dispatch(stepCountIncrease(1));
@@ -23,6 +24,24 @@ const Page = () => {
       router.push("/dashboard/counsellor");
     }
     return;
+  };
+
+  // navigate to otp verification page
+  useEffect(() => {
+    if (otpSentSuccess) {
+      dispatch(stepCountIncrease(3));
+      router.push("/dashboard/otp-verification/verify");
+    }
+  }, [otpSentSuccess]);
+
+  // set active step
+  useEffect(() => {
+    dispatch(stepCountIncrease(3));
+  }, []);
+
+  // send otp
+  const sendOtp = () => {
+    dispatch(sendOtpRequest({ phone: phoneNumber }));
   };
 
   return (
@@ -37,16 +56,25 @@ const Page = () => {
       <div className="form flex flex-col gap-10">
         <input
           type="text"
-          placeholder="+94     Phone number"
+          placeholder="+94   Phone number"
           className="w-full rounded-xl py-3 px-4 border-2 border-[#ECECEC;]"
+          onChange={(e) => setPhoneNumber(e.target.value)}
         />
 
         <div className="flex flex-row items-end justify-end">
           <div className="flex flex-row gap-5 font-semibold text-base">
+            <button
+              onClick={() => {
+                router.push("/dashboard/otp-verification/verify");
+              }}
+            >
+              TEST
+            </button>
             <button onClick={back}>Back</button>
             <button
-              className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white"
-              onClick={getOtp}
+              disabled={phoneNumber.length < 12}
+              className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white disabled:bg-[#ECECEC] disabled:text-[#666]"
+              onClick={sendOtp}
             >
               Get OTP
             </button>

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Head from "next/head";
@@ -8,9 +8,7 @@ import Footer from "@/components/common/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-import { ParallaxProvider } from 'react-scroll-parallax';
-
-
+import { ParallaxProvider } from "react-scroll-parallax";
 
 export default function RootLayout({
   children,
@@ -19,7 +17,6 @@ export default function RootLayout({
   auth: React.ReactNode;
 }) {
   return (
-
     <html lang="en" suppressHydrationWarning>
       <Head>
         <title>My page title</title>
@@ -28,12 +25,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <ParallaxProvider>
           <NavBar />
-          <ReduxProvider>{children}</ReduxProvider>
-          <Footer />
+          <ReduxProvider>
+            {children}
+            <Footer />
+          </ReduxProvider>
         </ParallaxProvider>
       </body>
-
     </html>
-
   );
 }

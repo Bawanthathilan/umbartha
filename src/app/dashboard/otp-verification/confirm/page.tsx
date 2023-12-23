@@ -1,7 +1,52 @@
-import React from "react";
+"use client";
+import React, { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { CiCamera } from "react-icons/ci";
 
-const page = () => {
+import { useAppDispatch, useAppSelector } from "@/hooks/reduxHooks";
+import {
+  stepCountIncrease,
+  createBookingRequest,
+} from "@/app/dashboard/reducer/index";
+
+const Page = () => {
+  const router = useRouter();
+  const dispatch = useAppDispatch();
+
+  // set active step
+  useEffect(() => {
+    dispatch(stepCountIncrease(4));
+  }, []);
+
+  const onSubmit = () => {
+    dispatch(
+      createBookingRequest({
+        createBooking: {
+          counsellor: "657fcd4c77d138ee4482bbab",
+          meetingBooking: {
+            client: "657ffb393080ccc1b1eae998",
+            meeting: "657fd959326e03adea78656b",
+            room: "6551bbf3602d7693369b01ef",
+            timeFrom: "24-11-2023 13:10",
+            timeTo: "24-11-2023 13:10",
+            status: "COMPLETED",
+          },
+        },
+        createPayment: {
+          counsellor: "657fcd4c77d138ee4482bbab",
+          meetingPayment: {
+            client: "657ffb393080ccc1b1eae998",
+            meeting: "657fd959326e03adea78656b",
+            room: "6551bbf3602d7693369b01ef",
+            paidOn: "24-11-2023 13:10",
+            paymentMethod: "6551bb9b602d7693369ae6c0",
+            currency: "LKR",
+          },
+        },
+      })
+    );
+  };
+
   return (
     <div className="flex flex-col gap-5">
       <div className="title">
@@ -67,9 +112,20 @@ const page = () => {
             </div>
           </div>
         </div>
+        <div className="flex flex-row items-end justify-end">
+          <div className="flex flex-row gap-5 font-semibold text-base">
+            <button>Back</button>
+            <button
+              onClick={onSubmit}
+              className="bg-[#272727] rounded-xl py-[17px] px-[40px] text-white disabled:bg-[#ECECEC] disabled:text-[#666]"
+            >
+              Proceed
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
