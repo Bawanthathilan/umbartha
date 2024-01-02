@@ -44,7 +44,7 @@ const Footer = () => {
     <footer className="relative bg-[#082623] w-full py-10">
       <div className=" container mx-auto max-w-7xl px-5 lg:px-0">
         <div className="flex flex-col  md:flex-row lg:flex-row justify-between">
-          <div className="logo flex flex-col gap-5">
+          <div className="logo flex flex-col gap-5 order-1">
             <Image
               src="/logo/umbartha_logo.svg"
               width={253}
@@ -66,7 +66,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="menu flex flex-row gap-6">
+          <div className="menu flex flex-row gap-6 order-3 lg:order-2">
             <div className="grid grid-cols-1 lg:grid-cols-2  grid-flow-row sm:flex mt-10 md:mt-0 lg:mt-0 sm:justify-between px-0 sm:px-5 md:px-0 lg:px-0 gap-7 sm:gap-5 md:gap-0 lg:gap-x-[78px] ">
               {data.footerLinks.map((item, index) => (
                 <div className="menu_links" key={index}>
@@ -91,7 +91,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="flex flex-col mt-10 md:mt-0 gap-5 lg:mt-0">
+          <div className="flex flex-col mt-10 md:mt-0 gap-5 lg:mt-0 order-2 lg:order-3">
             <h1 className="text-white text-[24px] md:text-[18px] lg:text-[32px] font-bold">
               Join Our newsletter
               <br />
