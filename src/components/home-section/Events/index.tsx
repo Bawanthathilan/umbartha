@@ -29,7 +29,7 @@ const Events = () => {
   }, []);
 
   return (
-    <div className=" bg-white py-[69px]">
+    <div className=" bg-white py-[69px]" id="ourevents">
       <div className="container max-w-7xl mx-auto">
         <div className="title">
           <h4 className=" text-center lg:text-left text-[32px] lg:text-[42px] font-bold text-[#014840]">

@@ -23,7 +23,7 @@ import ParalaxImg from "@/assets/home/paralax/1.png";
 const WhatWeOffer = () => {
   const { ref }: any = useParallax({ speed: 30 });
   return (
-    <div>
+    <div id="services">
       <div ref={ref} className="paralax absolute left-0">
         <Image
           src={ParalaxImg}

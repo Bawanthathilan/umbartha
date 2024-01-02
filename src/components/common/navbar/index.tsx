@@ -100,13 +100,13 @@ const NavBar = () => {
                   home
                 </Link>
                 <Link href="ourservices" onClick={() => setIsOpen(!isOpen)}>
-                  Service
+                  Services
                 </Link>
                 <Link href="aboutUs" onClick={() => setIsOpen(!isOpen)}>
-                  about
+                  about us
                 </Link>
                 <Link href="events" onClick={() => setIsOpen(!isOpen)}>
-                  event
+                  events
                 </Link>
               </div>
 
@@ -176,13 +176,13 @@ const NavBar = () => {
               home
             </Link>
             <Link href="ourservices" onClick={() => setIsOpen(!isOpen)}>
-              Service
+              Services
             </Link>
             <Link href="aboutUs" onClick={() => setIsOpen(!isOpen)}>
-              about
+              about us
             </Link>
             <Link href="events" onClick={() => setIsOpen(!isOpen)}>
-              event
+              events
             </Link>
           </div>
 

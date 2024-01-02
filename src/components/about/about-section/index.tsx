@@ -47,12 +47,12 @@ const AboutSection = () => {
       <div className="bg-bg-white-varient pt-[20px] lg:pt-[68px] z-10">
         <div className="container mx-auto max-w-7xl px-5 lg:px-0">
           <div className="section-1 flex flex-col gap-10">
-            <h1 className=" text-xl lg:text-[42px] text-[#082623] font-semibold leading-normal lg:leading-[50px] z-10">
+            <h1 className=" text-xl lg:text-[42px] text-[#082623] font-semibold text-justify lg:text-left leading-normal lg:leading-[50px] z-10">
               Our solar panels are designed to be highly efficient,{" "}
               <br className="hidden lg:block" /> delivering maximum solar
               production year-round, even on roofs with complicated angles.
             </h1>
-            <p className="text-[#4E4E4E] text-base lg:text-xl font-normal">
+            <p className="text-[#4E4E4E] text-base lg:text-xl font-normal text-justify lg:text-left ">
               Umbartha, a Marathi word meaning ‘threshold’ was originally chosen
               as the name for a business venture that Manisha Billimoria started
               in 2014 in a small way with exhibitions and sales of authentic
@@ -82,7 +82,7 @@ const AboutSection = () => {
                     <h4 className=" text-xl lg:text-[28px] font-semibold">
                       Vision
                     </h4>
-                    <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                    <p className="text-[#4E4E4E] font-normal text-base lg:text-xl text-justify lg:text-left ">
                       Our vision is to support with a listening ear and an
                       empathetic heart in an integrated and relational
                       counseling practise.
@@ -103,7 +103,7 @@ const AboutSection = () => {
                     <h4 className=" text-xl lg:text-[28px] font-semibold">
                       Mission
                     </h4>
-                    <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                    <p className="text-[#4E4E4E] font-normal text-base lg:text-xl text-justify lg:text-left ">
                       Our mission is to serve the community by bringing healing
                       and hope to individuals, families, couples, and others
                       seeking emotional and relational wellbeing as well as
@@ -117,7 +117,7 @@ const AboutSection = () => {
                 <h4 className=" text-xl lg:text-[28px] font-semibold">
                   Vision
                 </h4>
-                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl text-justify lg:text-left ">
                   Our vision is to support with a listening ear and an
                   empathetic heart in an integrated and relational counseling
                   practise.
@@ -127,7 +127,7 @@ const AboutSection = () => {
                 <h4 className=" text-xl lg:text-[28px] font-semibold">
                   Mission
                 </h4>
-                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl">
+                <p className="text-[#4E4E4E] font-normal text-base lg:text-xl text-justify lg:text-left ">
                   Our mission is to serve the community by bringing healing and
                   hope to individuals, families, couples, and others seeking
                   emotional and relational wellbeing as well as wholesome
