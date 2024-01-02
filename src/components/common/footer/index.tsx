@@ -49,7 +49,7 @@ const Footer = () => {
               src="/logo/umbartha_logo.svg"
               width={253}
               height={75}
-              alt={""}
+              alt={"logo"}
             />
 
             <div className="social flex flex-row gap-3 ">
